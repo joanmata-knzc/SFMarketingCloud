@@ -13,7 +13,7 @@
     <div class="back-bar">
         <div class="container-flex">
             <a href="../START.html" class="back-link">← Volver al Hub Principal</a>
-            <span class="badge badge-purple">Módulo 7: Ecosistema & Data Cloud</span>
+            <span class="badge badge-purple">Trail 3: Ecosistema & Data Cloud</span>
         </div>
     </div>
 
@@ -21,56 +21,209 @@
 
         <header style="text-align: left; padding-bottom: 20px;">
             <h1>Ecosistema & Data Cloud</h1>
-            <p class="subtitle">Conectando Marketing Cloud con el universo Salesforce y optimizando la inteligencia de datos.</p>
+            <p class="subtitle">Conectando Marketing Cloud con el universo Salesforce: Marketing Cloud Connect, Marketing Intelligence, Data Cloud con Identity Resolution y certificaciones del ecosistema.</p>
         </header>
 
         <!-- Sección 1: Marketing Cloud Connect -->
         <div class="content-section">
             <h2 class="section-title"><span>🔗</span> Marketing Cloud Connect</h2>
-            <p style="margin-bottom: 20px;">La pieza fundamental para unir Sales/Service Cloud con Marketing Cloud.</p>
+            <p style="margin-bottom: 20px;">La pieza fundamental para unir Sales Cloud y Service Cloud con Marketing Cloud, sincronizando datos de CRM y habilitando journeys basados en eventos del negocio.</p>
 
             <div class="topic-card">
-                <h3>Beneficios de la Conexión</h3>
+                <h3>Beneficios de la Conexión CRM-MC</h3>
                 <ul>
-                    <li><strong>Sincronización de Datos:</strong> Traer Leads, Contactos y Cuentas de CRM a MC automáticamente.</li>
-                    <li><strong>Salesforce Data Entry:</strong> Iniciar trayectorias en Journey Builder basadas en cambios en el CRM (ej. cuando se cierra una oportunidad).</li>
-                    <li><strong>Tracking en CRM:</strong> Ver las aperturas y clics de los emails directamente en el registro del contacto en Sales Cloud.</li>
-                    <li><strong>Distributed Marketing:</strong> Permitir que los equipos de ventas envíen emails aprobados por marketing directamente desde el CRM.</li>
+                    <li><strong>Sincronización de datos:</strong> Traer Leads, Contactos, Cuentas y Casos de Salesforce CRM a MC de forma automática en Synchronized Data Extensions.</li>
+                    <li><strong>Salesforce Data Entry en Journey Builder:</strong> Iniciar trayectorias basadas en cambios en el CRM (ej. cuando se cierra una Oportunidad, cuando se crea un Caso de soporte).</li>
+                    <li><strong>Tracking en el CRM:</strong> Ver las aperturas y clics de los emails de MC directamente en el registro del contacto en Sales Cloud, dando visibilidad completa al equipo comercial.</li>
+                    <li><strong>Distributed Marketing:</strong> Permitir a los equipos de ventas enviar emails aprobados por marketing directamente desde el CRM (ver módulo Omnicanal).</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Synchronized Data Extensions (SDEs)</h3>
+                <ul>
+                    <li><strong>¿Qué son?</strong> Data Extensions en MC que se sincronizan automáticamente con objetos de Salesforce CRM. Los cambios en CRM se reflejan en MC en el próximo ciclo de sincronización (generalmente cada 15-20 minutos).</li>
+                    <li><strong>Objetos sincronizables:</strong> Lead, Contact, Account, Opportunity, Case, Campaign, CampaignMember y objetos personalizados.</li>
+                    <li><strong>Selección de campos:</strong> El administrador elige qué campos de cada objeto sincronizar para controlar el volumen de datos y los datos que MC puede usar.</li>
+                    <li><strong>Uso en segmentación:</strong> Las SDEs se pueden usar en Query Activities de Automation Studio y en Decision Splits de Journey Builder igual que cualquier otra DE.</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Sección 2: Intelligence & Analytics -->
+        <!-- Sección 2: Marketing Intelligence (Datorama) -->
         <div class="content-section">
-            <h2 class="section-title"><span>📊</span> Marketing Intelligence (Datorama)</h2>
-            <p style="margin-bottom: 20px;">Transforma datos complejos en perspectivas accionables mediante dashboards avanzados.</p>
+            <h2 class="section-title"><span>📊</span> Marketing Cloud Intelligence (Datorama)</h2>
+            <p style="margin-bottom: 20px;">Transforma datos complejos de múltiples fuentes de marketing en perspectivas accionables mediante dashboards unificados y análisis avanzado.</p>
 
             <div class="topic-card">
-                <h3>Capacidades de Análisis</h3>
+                <h3>¿Qué es Marketing Cloud Intelligence?</h3>
                 <ul>
-                    <li><strong>Harmonización de Datos:</strong> Unir datos de MC, Google Analytics, Facebook Ads y más en un solo lugar.</li>
-                    <li><strong>Media Transparency Center:</strong> Visibilidad total sobre el gasto publicitario y el retorno de inversión (ROI).</li>
-                    <li><strong>Google Analytics Integration:</strong> Seguimiento automático de las conversiones que vienen desde tus emails de MC.</li>
+                    <li><strong>Definición:</strong> Plataforma de análisis de marketing (anteriormente Datorama) que centraliza datos de todos los canales de marketing en un único lugar para análisis y visualización.</li>
+                    <li><strong>Problema que resuelve:</strong> Los datos de MC Engagement están en un sistema, los de Google Ads en otro, los de Facebook en otro. Intelligence los unifica en una sola vista.</li>
+                    <li><strong>Tipo de herramienta:</strong> No es un BI genérico (como Tableau o Power BI), sino un BI especializado en marketing con conectores pre-construidos para las principales plataformas del sector.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Data Streams y Armonización</h3>
+                <ul>
+                    <li><strong>Data Streams:</strong> Conexiones configuradas que traen datos de distintas fuentes de forma automatizada: Marketing Cloud Engagement, Google Ads, Facebook Ads, DV360, Twitter Ads, Google Analytics, etc.</li>
+                    <li><strong>Harmonización de métricas:</strong> Mapeo de métricas comunes entre fuentes para crear un vocabulario unificado. Ej: "Clicks" en Google Ads = "Link Clicks" en Meta Ads → ambos se mapean a la métrica unificada "Clics".</li>
+                    <li><strong>TotalConnect:</strong> Conector de Intelligence que usa IA para armonizar datos automáticamente, reduciendo el tiempo de configuración manual.</li>
+                    <li><strong>API Data Stream:</strong> Puedes enviar datos desde cualquier fuente personalizada a Intelligence vía API si no existe un conector nativo.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Dashboards y Capacidades de Análisis</h3>
+                <ul>
+                    <li><strong>Dashboards personalizados:</strong> Constructor de dashboards visual con gráficos, tablas, KPI tiles y filtros dinámicos. Sin necesidad de SQL.</li>
+                    <li><strong>Media Transparency Center:</strong> Dashboard específico para ver el gasto total, CPM, CPC, CTR y ROAS de toda la inversión publicitaria en un solo lugar.</li>
+                    <li><strong>Comparativas temporales:</strong> Comparar el rendimiento esta semana vs. la semana pasada, este mes vs. el mismo mes del año anterior, etc.</li>
+                    <li><strong>Alertas automáticas:</strong> Notificaciones si una métrica cae por debajo o supera un umbral definido (ej. "avísame si el CTR cae por debajo del 1.5%").</li>
+                    <li><strong>Sharing:</strong> Los dashboards se pueden compartir con stakeholders que no tienen acceso a MC mediante un enlace público o exportación programada por email.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Google Analytics Integration</h3>
+                <ul>
+                    <li><strong>UTM Parameters desde MC:</strong> MC puede añadir automáticamente parámetros UTM (<code>utm_source</code>, <code>utm_medium</code>, <code>utm_campaign</code>, <code>utm_content</code>) a todos los enlaces de los emails para tracking en Google Analytics.</li>
+                    <li><strong>Configuración en Email Studio / Account Settings:</strong> Se define la estructura de UTMs a nivel de cuenta o de envío individual. Todos los links del email reciben los parámetros automáticamente.</li>
+                    <li><strong>Lo que GA mide:</strong> Visitas desde email, páginas visitadas, tasa de conversión, duración de sesión y objetivos completados (compra, registro) para los usuarios que llegan vía email.</li>
+                    <li><strong>Cierre del loop de ROI:</strong> Con GA integrado puedes calcular el ROI real de cada campaña: no solo aperturas y clics, sino conversiones reales y revenue atribuido.</li>
+                    <li><strong>Intelligence + GA:</strong> Intelligence puede conectar con Google Analytics para traer las métricas de conversión al mismo dashboard que las métricas de envío de MC, unificando la visión del rendimiento.</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Sección 3: Data Cloud (CDP) -->
+        <!-- Sección 3: Salesforce Data Cloud (Data 360) -->
         <div class="content-section">
-            <h2 class="section-title"><span>☁️</span> Salesforce Data Cloud</h2>
+            <h2 class="section-title"><span>☁️</span> Salesforce Data Cloud (Data 360)</h2>
+            <p style="margin-bottom: 20px;">La plataforma de datos de cliente (CDP) de Salesforce que unifica datos de todas las fuentes en perfiles individuales únicos y alimenta journeys en tiempo real con audiencias calculadas dinámicamente.</p>
+
             <div class="topic-card">
-                <h3>El Futuro del Marketing</h3>
+                <h3>Arquitectura de Data Cloud</h3>
                 <ul>
-                    <li><strong>Resolución de Identidad:</strong> Unificar múltiples perfiles de un mismo cliente en un "Registro Unificado".</li>
-                    <li><strong>Segmentación Masiva:</strong> Crear audiencias hiper-segmentadas en segundos usando volúmenes masivos de datos.</li>
-                    <li><strong>Acción Inmediata:</strong> Alimentar a Journey Builder con segmentos calculados en tiempo real desde Data Cloud.</li>
-                    <li><strong>Conectores Nativos:</strong> Integración fluida con todo el ecosistema Salesforce y nubes externas.</li>
+                    <li><strong>Data Streams:</strong> Canales de ingesta de datos. Pueden ser en tiempo real (streaming) o por lotes (batch). Fuentes: Salesforce CRM, Marketing Cloud Engagement, apps web/móvil, cloud storage.</li>
+                    <li><strong>Data Lake Objects (DLO):</strong> Los datos ingeridos aterrizan en el data lake sin transformar. Son la capa raw que conserva los datos tal como llegan de la fuente.</li>
+                    <li><strong>Data Model Objects (DMO):</strong> Los DLO se mapean al modelo de datos estándar de Data Cloud (Individual, Account, Engagement, Product, etc.). El mapeo transforma datos raw en datos semánticos estructurados.</li>
+                    <li><strong>Unified Individual (Perfil Unificado):</strong> El registro que consolida todos los datos de un mismo cliente real, resolviendo las discrepancias e identidades duplicadas entre todas las fuentes.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Identity Resolution (Resolución de Identidad)</h3>
+                <ul>
+                    <li><strong>Problema que resuelve:</strong> Un mismo cliente puede tener diferentes registros en distintos sistemas (CRM, web, app móvil, email, tienda física) con datos ligeramente distintos o incompletos.</li>
+                    <li><strong>Ruleset (Reglas de coincidencia):</strong> Conjunto de reglas configurables que definen cuándo dos registros corresponden al mismo individuo. Ej: "mismo email" O "mismo teléfono + mismo código postal".</li>
+                    <li><strong>Tipos de coincidencia:</strong> Exacta (mismo valor) o Fuzzy (valores similares para manejar errores tipográficos en nombres o direcciones).</li>
+                    <li><strong>Match Rates:</strong> El porcentaje de registros que consiguen asociarse a un perfil unificado. Un Match Rate alto indica buena calidad de datos y buenos identificadores únicos en las fuentes.</li>
+                    <li><strong>Individual vs. Household:</strong> Data Cloud puede unificar a nivel de persona individual o a nivel de hogar familiar, según las necesidades del negocio.</li>
+                    <li><strong>Party Identification:</strong> Los identificadores (email, teléfono, cookie ID, loyalty ID, device ID) actúan como anclas para conectar registros de distintas fuentes al mismo individuo.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Conectores e Integración de Datos</h3>
+                <ul>
+                    <li><strong>Salesforce CRM Connector:</strong> Ingiere objetos nativos de Sales Cloud, Service Cloud, etc. de forma nativa y sin configuración compleja. Los datos se sincronizan automáticamente.</li>
+                    <li><strong>Marketing Cloud Connector:</strong> Trae datos de engagement de MC Engagement (opens, clicks, sends, bounces) hacia Data Cloud para enriquecer los perfiles unificados.</li>
+                    <li><strong>Ingestion API:</strong> API REST para enviar datos en tiempo real desde cualquier aplicación externa: web, móvil, IoT, sistemas de punto de venta, plataformas de ecommerce.</li>
+                    <li><strong>Cloud Storage Connectors:</strong> Amazon S3, Google Cloud Storage, Azure Blob Storage para cargar archivos batch (CSV, Parquet) de grandes volúmenes de datos históricos.</li>
+                    <li><strong>MuleSoft:</strong> Para integraciones complejas con sistemas legados o ERPs que no tienen conector nativo disponible en Data Cloud.</li>
+                    <li><strong>Data Federation:</strong> Opción de consultar datos directamente en su fuente original sin necesidad de moverlos físicamente a Data Cloud (zero-copy).</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Segmentación en Data Cloud</h3>
+                <ul>
+                    <li><strong>Segment Builder:</strong> Interfaz visual de arrastrar y soltar para crear audiencias combinando atributos de todas las fuentes ingestadas y mapeadas al modelo de datos unificado.</li>
+                    <li><strong>Segmentos basados en perfiles unificados:</strong> La segmentación trabaja sobre el perfil unificado, no sobre los datos raw de cada fuente por separado. Un "cliente VIP" se identifica aunque sus datos estén en 3 sistemas distintos.</li>
+                    <li><strong>Segmentos calculados dinámicamente:</strong> A diferencia de las segmentaciones batch de MC Engagement, Data Cloud actualiza la membresía de los segmentos casi en tiempo real según nuevos eventos recibidos.</li>
+                    <li><strong>Related Attributes:</strong> Incluir en el criterio de segmento atributos de objetos relacionados. Ej: "clientes cuyo último pedido fue mayor a 100€ y cuya última interacción de soporte fue negativa".</li>
+                    <li><strong>Activation Targets:</strong> Los segmentos se "activan" enviando la audiencia a destinos: Marketing Cloud Engagement, Meta Ads, Google Ads, Snowflake y otros.</li>
+                    <li><strong>Segment Publishing:</strong> Los segmentos de Data Cloud se publican como fuentes de entrada a Journey Builder o como audiencias de publicidad digital.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Data Cloud → Journey Builder: Interacciones en Tiempo Real</h3>
+                <ul>
+                    <li><strong>Data Cloud Entry Source:</strong> Journey Builder puede usar segmentos de Data Cloud como fuente de entrada, alimentando journeys con los perfiles unificados y datos más actualizados disponibles.</li>
+                    <li><strong>Related Attributes en Journeys:</strong> Durante la trayectoria, los emails y SMS pueden acceder a los atributos del perfil unificado de Data Cloud para una personalización más rica y precisa.</li>
+                    <li><strong>Triggered Journeys desde Data Cloud:</strong> Eventos en Data Cloud (ej. "cliente alcanzó nivel VIP", "cliente hizo X compras en 30 días") pueden disparar automáticamente la entrada a un journey.</li>
+                    <li><strong>Ventaja vs. DE tradicional:</strong> Los segmentos de Data Cloud se recalculan automáticamente sin SQL queries manuales en Automation Studio. El journey siempre trabaja con la audiencia más fresca posible.</li>
+                    <li><strong>Unified Profile en personalización:</strong> AMPscript puede acceder a los datos del perfil unificado de Data Cloud para enriquecer la personalización de emails más allá de los datos almacenados en MC Engagement.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sección 4: Certifications -->
+        <div class="content-section">
+            <h2 class="section-title"><span>🏆</span> Certificaciones de Salesforce Marketing Cloud</h2>
+            <p style="margin-bottom: 20px;">Salesforce ofrece un itinerario de certificaciones específico para Marketing Cloud que valida el conocimiento técnico y estratégico de forma oficial en el mercado.</p>
+
+            <div class="topic-card">
+                <h3>Marketing Associate</h3>
+                <ul>
+                    <li><strong>Nivel:</strong> Entrada. Ideal para quien comienza con Marketing Cloud o el marketing digital en el ecosistema Salesforce.</li>
+                    <li><strong>Temas principales:</strong> Fundamentos de marketing digital, conceptos básicos de email marketing, suite de productos de MC, métricas básicas.</li>
+                    <li><strong>Prerequisitos formales:</strong> Ninguno. Recomendado: completar el Trail 1 (Account Setup) de Trailhead.</li>
+                    <li><strong>Formato del examen:</strong> 40 preguntas de opción múltiple. 65 minutos. Aprobado con 65% o más.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Marketing Cloud Email Specialist</h3>
+                <ul>
+                    <li><strong>Nivel:</strong> Intermedio.</li>
+                    <li><strong>Temas principales:</strong> Diseño y creación de emails (Content Builder, HTML básico, AMPscript), gestión de datos (Data Extensions, listas), entregabilidad, pruebas A/B, seguimiento y métricas, automatización de email, Email Studio.</li>
+                    <li><strong>Para quién:</strong> Especialistas en email que trabajan diariamente con Email Studio, Content Builder y Automation Studio.</li>
+                    <li><strong>Trails de referencia:</strong> Trail 1 (Account Setup, especialmente deliverability) + Trail 2 (Implement, especialmente contenido y email).</li>
+                    <li><strong>Formato:</strong> 60 preguntas. 90 minutos. Aprobado con 65% o más.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Marketing Cloud Administrator</h3>
+                <ul>
+                    <li><strong>Nivel:</strong> Intermedio-Avanzado.</li>
+                    <li><strong>Temas principales:</strong> Configuración de cuenta y Business Units, gestión de usuarios y roles, seguridad (MFA, SSO, IP restrictions), Marketing Cloud Connect, configuración de canales, entregabilidad avanzada, governanza de datos.</li>
+                    <li><strong>Para quién:</strong> Administradores de MC responsables de la configuración técnica, la seguridad y el gobierno de la plataforma.</li>
+                    <li><strong>Trails de referencia:</strong> Trail 1 (Account Setup, completo) + Trail 2 (Implement, secciones de datos) + aspectos técnicos de Trail 3.</li>
+                    <li><strong>Formato:</strong> 60 preguntas. 90 minutos. Aprobado con 65% o más.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Marketing Cloud Developer</h3>
+                <ul>
+                    <li><strong>Nivel:</strong> Avanzado.</li>
+                    <li><strong>Temas principales:</strong> AMPscript avanzado, SSJS, APIs REST y SOAP, CloudPages, personalización dinámica, integración con sistemas externos, scripting en Automation Studio.</li>
+                    <li><strong>Para quién:</strong> Desarrolladores que construyen soluciones personalizadas, integraciones y contenido dinámico complejo para Marketing Cloud.</li>
+                    <li><strong>Trails de referencia:</strong> Secciones avanzadas del Trail 2 + Trail 3 completo (Developer Tools section).</li>
+                    <li><strong>Formato:</strong> 60 preguntas. 90 minutos. Aprobado con 65% o más.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Consejos de Preparación para los Exámenes</h3>
+                <ul>
+                    <li><strong>Exam Guide oficial:</strong> Descargar el Exam Guide de cada certificación en Trailhead. Muestra los porcentajes exactos de cada tema en el examen — es la guía de estudio más importante.</li>
+                    <li><strong>Trailmixes oficiales:</strong> Salesforce publica Trailmixes de preparación para cada examen con los módulos exactos a completar. Buscar "[Nombre Certificación] Certification Trailmix".</li>
+                    <li><strong>Preguntas situacionales:</strong> El examen mezcla preguntas conceptuales con escenarios prácticos. Entender el "por qué" y "cuándo" de cada decisión es más importante que memorizar nombres de funciones.</li>
+                    <li><strong>Sandbox de práctica:</strong> Si es posible, practicar en una cuenta de MC (Developer Edition gratuita o sandbox de empresa). La experiencia práctica refuerza el conocimiento teórico.</li>
+                    <li><strong>Comunidad Trailblazer:</strong> Grupos de estudio en la Trailblazer Community con personas preparando el mismo examen. Excelente para resolver dudas y compartir recursos.</li>
+                    <li><strong>Focus77 y Focus on Force:</strong> Recursos de terceros con preguntas de práctica adicionales útiles para comprobar el nivel de preparación antes del examen real.</li>
                 </ul>
             </div>
         </div>
 
         <footer>
-            <p>Konozca &copy; 2026 | Material diseñado para formación profesional en Salesforce Marketing Cloud.</p>
+            <p>Konozca &copy; 2026 | Material diseñado para formación profesional en Salesforce Marketing Cloud.<br>
+            Basado en el Trail: <em>Optimize and Grow Your Use of Marketing Cloud Engagement — Ecosistema, Data Cloud &amp; Certificaciones</em></p>
         </footer>
 
     </div>

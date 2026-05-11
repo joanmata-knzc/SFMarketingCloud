@@ -13,7 +13,7 @@
     <div class="back-bar">
         <div class="container-flex">
             <a href="../START.html" class="back-link">← Volver al Hub Principal</a>
-            <span class="badge badge-teal">Módulo 5: Omnicanal Avanzado</span>
+            <span class="badge badge-teal">Trail 3: Omnicanal Avanzado</span>
         </div>
     </div>
 
@@ -21,20 +21,54 @@
 
         <header style="text-align: left; padding-bottom: 20px;">
             <h1>Omnicanalidad & Publicidad</h1>
-            <p class="subtitle">Expandiendo el alcance más allá del email: SMS, WhatsApp y Publicidad Digital.</p>
+            <p class="subtitle">Expandiendo el alcance más allá del email: SMS, WhatsApp conversacional, Publicidad Digital y Distributed Marketing para equipos de ventas y partners.</p>
         </header>
 
         <!-- Sección 1: MobileConnect -->
         <div class="content-section">
             <h2 class="section-title"><span>📱</span> MobileConnect (SMS)</h2>
-            <p style="margin-bottom: 20px;">Llega a tus clientes directamente en sus dispositivos móviles con mensajes de texto específicos y urgentes.</p>
+            <p style="margin-bottom: 20px;">Llega a tus clientes directamente en sus dispositivos móviles con mensajes de texto específicos y urgentes. MobileConnect es el módulo de MC para gestionar todos los flujos de mensajería SMS.</p>
 
             <div class="topic-card">
                 <h3>Capacidades Clave</h3>
                 <ul>
-                    <li><strong>Outbound Messages:</strong> Envíos directos para alertas, promociones o autenticación.</li>
-                    <li><strong>Text Response:</strong> Creación de palabras clave (keywords) para interacciones bidireccionales (ej. "ENVIA INFO AL 12345").</li>
-                    <li><strong>Integración en Journeys:</strong> Añadir el canal SMS como parte de una trayectoria multicanal.</li>
+                    <li><strong>Outbound Messages:</strong> Envíos directos para alertas, promociones, autenticación (OTP) y notificaciones transaccionales.</li>
+                    <li><strong>Text Response (MO/MT):</strong> Creación de keywords para interacciones bidireccionales. El usuario envía una palabra clave (MO: Mobile Originated) y MC responde automáticamente (MT: Mobile Terminated).</li>
+                    <li><strong>Integración en Journeys:</strong> Añadir el canal SMS como actividad dentro de una trayectoria multicanal en Journey Builder.</li>
+                    <li><strong>Link Abbreviation:</strong> Acortamiento automático de URLs para SMS, con tracking de clics integrado.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Tipos de Número y Configuración</h3>
+                <ul>
+                    <li><strong>Short Code (Código Corto):</strong> Número de 5-6 dígitos, exclusivo de un país. Mayor capacidad de envío (miles de mensajes/segundo) y mejor entregabilidad. El proceso de registro ante los operadores puede tardar semanas o meses.</li>
+                    <li><strong>Dedicated Short Code:</strong> Short code exclusivo de tu marca. El estándar para envíos masivos de marketing en EE.UU. y otros mercados.</li>
+                    <li><strong>Long Code (10DLC en EE.UU.):</strong> Número de teléfono estándar de 10 dígitos. Requiere registro de marca y campaña ante The Campaign Registry (TCR). Volumen de envío más limitado que un short code.</li>
+                    <li><strong>Toll-Free Number:</strong> Número 800/888 habilitado para SMS. Alternativa intermedia entre short code y long code en el mercado norteamericano.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Keywords y Flujos de Opt-In / Opt-Out</h3>
+                <ul>
+                    <li><strong>Keyword de Opt-In:</strong> Palabra que el usuario envía para suscribirse (ej. "INFO", "SÍ", "PROMO"). MobileConnect responde automáticamente con un mensaje de confirmación de suscripción.</li>
+                    <li><strong>Double Opt-In por SMS:</strong> Tras la keyword inicial, MC envía un SMS de confirmación que requiere respuesta afirmativa ("SÍ" o "CONFIRMAR") antes de activar la suscripción definitiva.</li>
+                    <li><strong>STOP / PARA (opt-out obligatorio):</strong> Los operadores de telecomunicaciones exigen que "STOP", "PARA", "BAJA", "CANCEL" y sus variantes funcionen siempre como opt-out inmediato. Es obligatorio por ley en casi todos los países.</li>
+                    <li><strong>HELP (obligatoria):</strong> El usuario recibe automáticamente información de la marca y cómo darse de baja. También requerida por los operadores.</li>
+                    <li><strong>Keyword personalizada:</strong> Además de las obligatorias, se pueden configurar keywords de negocio propias (ej. "OFERTA", "EVENTO", "SOPORTE") con respuestas específicas.</li>
+                    <li><strong>Cumplimiento legal:</strong> Las regulaciones de SMS varían por país (TCPA en EE.UU., LOPD en España, PECR en UK). Siempre verificar con el equipo legal antes del despliegue en cada mercado.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Mejores Prácticas de SMS Marketing</h3>
+                <ul>
+                    <li><strong>Brevedad:</strong> Máximo 160 caracteres en un SMS estándar. Mensajes más largos se concatenan y pueden fragmentarse en el dispositivo.</li>
+                    <li><strong>Identificación del remitente:</strong> Siempre identificar la marca al inicio del mensaje (ej. "MC Moda: Tu pedido #1234 está en camino").</li>
+                    <li><strong>CTA claro:</strong> Un solo call-to-action por mensaje. Usar URL acortada con tracking.</li>
+                    <li><strong>Horario:</strong> Respetar las horas permitidas por ley (generalmente 8:00-21:00 en el huso horario del receptor). MC puede programar envíos respetando el horario local del contacto.</li>
+                    <li><strong>Frecuencia:</strong> El SMS es un canal íntimo. La fatiga se produce rápido. Máximo 2-4 mensajes por mes en campañas de marketing.</li>
                 </ul>
             </div>
         </div>
@@ -42,14 +76,58 @@
         <!-- Sección 2: WhatsApp -->
         <div class="content-section">
             <h2 class="section-title"><span>💬</span> WhatsApp en Marketing Cloud</h2>
-            <p style="margin-bottom: 20px;">Marketing Conversacional: Comunícate con los clientes en la plataforma de mensajería más popular del mundo.</p>
+            <p style="margin-bottom: 20px;">Marketing Conversacional: comunícate con los clientes en la plataforma de mensajería más popular del mundo, integrando conversaciones en tus journeys de Journey Builder.</p>
 
             <div class="topic-card">
-                <h3>Implementación</h3>
+                <h3>Tipos de Conversación y Modelo de Precios de Meta</h3>
                 <ul>
-                    <li><strong>Plantillas de Mensaje:</strong> Deben ser aprobadas por Meta antes de su uso.</li>
-                    <li><strong>Ventana de 24h:</strong> Respuesta libre dentro de las 24h desde el último mensaje del cliente.</li>
-                    <li><strong>Interacciones Ricas:</strong> Uso de botones, imágenes y listas en las conversaciones.</li>
+                    <li><strong>Business-Initiated — Marketing:</strong> Tu marca inicia el contacto con mensajes promocionales. Requiere plantilla aprobada por Meta. Se cobra por conversación de 24h abierta.</li>
+                    <li><strong>Business-Initiated — Utility:</strong> Mensajes transaccionales y de servicio: confirmaciones, actualizaciones de estado de pedido, recordatorios de cita. Tarifa inferior a las de marketing.</li>
+                    <li><strong>Business-Initiated — Authentication:</strong> OTPs y verificaciones de identidad. Tarifa específica y restricciones de contenido estrictas.</li>
+                    <li><strong>User-Initiated — Service:</strong> El usuario inicia la conversación. Dentro de la ventana de 24h desde el último mensaje del usuario, la marca puede responder libremente sin plantilla y con tarifa mínima.</li>
+                    <li><strong>Pricing por país:</strong> Meta cobra por conversación de 24h con tarifas que varían significativamente según el país. Estimar el volumen y el mercado antes del despliegue para presupuestar correctamente.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Plantillas HSM (Highly Structured Messages)</h3>
+                <ul>
+                    <li><strong>Aprobación previa por Meta:</strong> Todas las plantillas de business-initiated deben aprobarse antes de usarlas. El proceso puede durar de horas a días según la categoría y el historial de la cuenta.</li>
+                    <li><strong>Componentes de una plantilla:</strong>
+                        <ul>
+                            <li>Header: texto, imagen, video o documento adjunto</li>
+                            <li>Body: texto principal con variables dinámicas &#123;&#123;1&#125;&#125;, &#123;&#123;2&#125;&#125;... sustituidas en el momento del envío</li>
+                            <li>Footer: texto secundario o legal</li>
+                            <li>Buttons: botones de acción (hasta 3)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Botones interactivos:</strong>
+                        <ul>
+                            <li>Call-to-Action (CTA): abrir URL o llamar a un número de teléfono</li>
+                            <li>Quick Reply: respuesta predefinida que el usuario toca con un clic</li>
+                        </ul>
+                    </li>
+                    <li><strong>Categorías:</strong> Marketing, Utility y Authentication. Cada categoría tiene restricciones específicas de contenido que Meta revisa en la aprobación.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>WhatsApp en Journey Builder</h3>
+                <ul>
+                    <li><strong>Actividad de WhatsApp:</strong> Journey Builder incluye una actividad nativa de WhatsApp que envía una plantilla HSM aprobada al contacto en el momento definido del journey.</li>
+                    <li><strong>Personalización dinámica:</strong> Las variables de la plantilla se rellenan con datos del contacto almacenados en MC (nombre, número de pedido, fecha de cita, etc.).</li>
+                    <li><strong>Combinación de canales:</strong> Usar WhatsApp como canal de fallback si el email no se abrió, o como canal preferido para segmentos con alta tasa de apertura en WhatsApp.</li>
+                    <li><strong>Conversational Marketing:</strong> Una vez el usuario responde (dentro de la ventana de 24h), se puede iniciar un flujo conversacional libre o utilizar respuestas automáticas basadas en keywords.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Implementación Técnica</h3>
+                <ul>
+                    <li><strong>WhatsApp Business Account (WABA):</strong> Requiere una cuenta empresarial de WhatsApp verificada por Meta, vinculada a un número de teléfono dedicado.</li>
+                    <li><strong>Business Service Provider (BSP):</strong> Marketing Cloud actúa como BSP certificado de Meta para el envío de mensajes de WhatsApp.</li>
+                    <li><strong>Opt-in obligatorio:</strong> Meta exige que los contactos hayan dado consentimiento explícito para recibir mensajes de WhatsApp de la marca antes de iniciar conversaciones.</li>
+                    <li><strong>Número dedicado:</strong> El número de WhatsApp debe ser exclusivo de MC y no puede usarse simultáneamente en la app de WhatsApp Business.</li>
                 </ul>
             </div>
         </div>
@@ -57,18 +135,77 @@
         <!-- Sección 3: Advertising Studio -->
         <div class="content-section">
             <h2 class="section-title"><span>📢</span> Advertising Studio</h2>
+            <p style="margin-bottom: 20px;">Coordina la publicidad digital con tus datos de cliente de Marketing Cloud para conseguir anuncios más relevantes, reducir el desperdicio de presupuesto y cerrar el loop entre marketing y publicidad.</p>
+
             <div class="topic-card">
-                <h3>Publicidad Basada en Datos</h3>
+                <h3>Publicidad Basada en Datos de Cliente</h3>
                 <ul>
-                    <li><strong>Lookalike Audiences:</strong> Encontrar nuevos clientes en Facebook/Google que se parezcan a tus mejores clientes actuales.</li>
-                    <li><strong>Supresión de Publicidad:</strong> Dejar de gastar dinero en anuncios para clientes que ya han comprado o que tienen casos de soporte abiertos.</li>
-                    <li><strong>Lead Capture:</strong> Conectar formularios de anuncios directamente con Data Extensions de Marketing Cloud.</li>
+                    <li><strong>Customer Audiences:</strong> Exportar segmentos de MC (Data Extensions) directamente a Facebook Ads, Google Ads o Twitter Ads como audiencias personalizadas (Custom Audiences).</li>
+                    <li><strong>Lookalike Audiences:</strong> Meta y Google crean automáticamente audiencias de usuarios similares a tus mejores clientes actuales para encontrar nuevos prospectos de alto valor.</li>
+                    <li><strong>Supresión de Publicidad:</strong> Excluir de tus anuncios a clientes que ya han comprado, a usuarios con casos de soporte abiertos, o a contactos que están en un journey activo de email — ahorra presupuesto y mejora la experiencia.</li>
+                    <li><strong>Lead Capture:</strong> Conectar formularios de Lead Ads de Facebook directamente con Data Extensions de MC para capturar leads en tiempo real sin fricción.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Integración con Journey Builder</h3>
+                <ul>
+                    <li><strong>Advertising Activity en Journeys:</strong> Añadir o eliminar contactos de audiencias publicitarias de forma automática como parte de una trayectoria en Journey Builder.</li>
+                    <li><strong>Ejemplo de coordinación:</strong> Contacto entra al journey → Email Day 0 → Si no abre en 3 días → Automáticamente se añade a la audiencia de Facebook Ads con el mismo mensaje → Si hace clic en el anuncio → Sale del journey de publicidad.</li>
+                    <li><strong>Consistencia omnicanal:</strong> El contacto recibe el mismo mensaje y oferta en email y en redes sociales, reforzando el impacto sin parecer repetitivo al aparecer en diferentes momentos y formatos.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Digital Advertising con Datos de Cliente</h3>
+                <ul>
+                    <li><strong>Estrategia de audiencias por ciclo de vida:</strong> Diferentes mensajes publicitarios para prospectos fríos (awareness), leads (consideración) y clientes actuales (upsell/retención).</li>
+                    <li><strong>Frecuency capping:</strong> Controlar cuántas veces un mismo usuario ve tu anuncio para evitar la fatiga publicitaria y el efecto negativo en la percepción de marca.</li>
+                    <li><strong>Attribution:</strong> Advertising Studio permite rastrear qué anuncios han contribuido a conversiones registradas en MC, cerrando el loop entre gasto publicitario y revenue.</li>
+                    <li><strong>Privacidad:</strong> Las audiencias se envían de forma hasheada (email cifrado con SHA-256) a las plataformas publicitarias, nunca en texto plano.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sección 4: Distributed Marketing -->
+        <div class="content-section">
+            <h2 class="section-title"><span>🤝</span> Distributed Marketing</h2>
+            <p style="margin-bottom: 20px;">Distributed Marketing permite a equipos de ventas, partners y empleados enviar comunicaciones pre-aprobadas por marketing directamente desde Salesforce CRM, sin necesidad de acceder a Marketing Cloud.</p>
+
+            <div class="topic-card">
+                <h3>¿Qué es y para qué sirve?</h3>
+                <ul>
+                    <li><strong>Problema que resuelve:</strong> Los equipos de ventas quieren comunicarse de forma personalizada con sus clientes, pero marketing necesita controlar el mensaje, la marca y el cumplimiento legal.</li>
+                    <li><strong>Solución:</strong> Marketing crea y aprueba plantillas de email/SMS en MC. Los equipos de ventas eligen la plantilla adecuada desde el CRM, personalizan solo los campos permitidos y envían con un clic.</li>
+                    <li><strong>Canales soportados:</strong> Email, SMS, WhatsApp.</li>
+                    <li><strong>Tracking unificado:</strong> Los envíos realizados por ventas quedan registrados en MC con métricas de apertura, clics y respuesta, y también son visibles en el registro CRM del contacto.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Casos de Uso</h3>
+                <ul>
+                    <li><strong>Equipos comerciales (Sales Cloud):</strong> Un comercial envía un email de seguimiento post-reunión usando una plantilla aprobada, con su propio nombre como remitente ("de parte de") pero con el contenido controlado por marketing.</li>
+                    <li><strong>Red de franquiciados o partners:</strong> Cada franquicia puede enviar comunicaciones de marketing local dentro de los límites de marca que el corporate ha definido en las plantillas.</li>
+                    <li><strong>Equipos de campo y distribuidores:</strong> Agentes o distribuidores envían comunicaciones a sus propios contactos desde una app móvil o el CRM, con el respaldo de la plataforma de marketing.</li>
+                    <li><strong>Send on Behalf:</strong> El email se envía "de parte de" un representante específico (nombre y dirección del comercial como remitente), pero la infraestructura de envío y tracking es MC.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Configuración y Control</h3>
+                <ul>
+                    <li><strong>Packaged Content:</strong> Marketing empaqueta plantillas, asuntos de email aprobados y activos de Content Builder en "paquetes" que distribuye a los equipos.</li>
+                    <li><strong>Campos editables vs. bloqueados:</strong> Marketing define qué partes de la plantilla puede personalizar el vendedor (ej. nombre del cliente, fecha de reunión) y cuáles son fijas (logo, CTA, footer legal).</li>
+                    <li><strong>Aprobación de envíos:</strong> Se puede configurar un flujo de aprobación opcional donde marketing revisa el envío antes de que salga.</li>
+                    <li><strong>Límites de envío:</strong> Marketing puede definir con qué frecuencia máxima puede enviar cada representante para evitar el spam a los clientes.</li>
                 </ul>
             </div>
         </div>
 
         <footer>
-            <p>Konozca &copy; 2026 | Material diseñado para formación profesional en Salesforce Marketing Cloud.</p>
+            <p>Konozca &copy; 2026 | Material diseñado para formación profesional en Salesforce Marketing Cloud.<br>
+            Basado en el Trail: <em>Optimize and Grow Your Use of Marketing Cloud Engagement — Mensajes Multicanal</em></p>
         </footer>
 
     </div>
