@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\konoz\\\\Documents\\\\Certificates\\\\Marketing Cloud\" -Recurse -Force | Select-Object FullName, @{Name=\"Type\";Expression={if\\($_.PSIsContainer\\){\"DIR\"}else{\"FILE\"}}} | Sort-Object FullName | Format-Table -AutoSize)",
+      "WebFetch(domain:trailhead.salesforce.com)",
+      "Bash(git *)"
+    ]
+  }
+}
