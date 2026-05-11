@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo & AMPscript — Knowledge Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../marketing_style.css">
+</head>
+
+<body>
+    <div class="back-bar">
+        <div class="container-flex">
+            <a href="../START.html" class="back-link">← Volver al Hub Principal</a>
+            <span class="badge badge-blue">Módulo 6: Desarrollo & AMPscript</span>
+        </div>
+    </div>
+
+    <div class="container" style="padding-top: 40px;">
+
+        <header style="text-align: left; padding-bottom: 20px;">
+            <h1>Desarrollo & AMPscript</h1>
+            <p class="subtitle">Personalización programática avanzada para crear experiencias verdaderamente dinámicas.</p>
+        </header>
+
+        <!-- Sección 1: Introducción a AMPscript -->
+        <div class="content-section">
+            <h2 class="section-title"><span>💻</span> ¿Qué es AMPscript?</h2>
+            <p style="margin-bottom: 20px;">Es el lenguaje de scripting propietario de Salesforce Marketing Cloud, diseñado para incrustar contenido dinámico en emails, landing pages y SMS.</p>
+
+            <div class="topic-card">
+                <h3>Funciones Comunes</h3>
+                <ul>
+                    <li><strong>Lookup:</strong> Recuperar datos de una Data Extension externa (ej. buscar el último producto comprado).</li>
+                    <li><strong>IF/ELSE:</strong> Lógica condicional para mostrar u ocultar secciones de contenido.</li>
+                    <li><strong>Formatting:</strong> Cambiar el formato de fechas, números o textos (ej. <code>ProperCase</code> para nombres).</li>
+                    <li><strong>UpsertData:</strong> Escribir o actualizar datos en una Data Extension desde una landing page.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sección 2: Otros Lenguajes -->
+        <div class="content-section">
+            <h2 class="section-title"><span>🛠️</span> Herramientas para Desarrolladores</h2>
+            <div class="topic-card">
+                <h3>SSJS vs GTL</h3>
+                <ul>
+                    <li><strong>Server-Side JavaScript (SSJS):</strong> Basado en JS clásico, ideal para landing pages y procesos complejos que AMPscript no puede manejar.</li>
+                    <li><strong>Guide Template Language (GTL):</strong> Basado en Handlebars/Mustache, útil para iterar sobre estructuras JSON (ej. catálogos de productos).</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>APIs & SDKs</h3>
+                <ul>
+                    <li><strong>REST API:</strong> Para integraciones modernas (trigger de envíos, gestión de activos).</li>
+                    <li><strong>SOAP API:</strong> Para operaciones de datos heredadas y de bajo nivel.</li>
+                    <li><strong>Marketing Cloud SDKs:</strong> Facilitan la integración de aplicaciones móviles con MC.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sección 3: Casos de Uso Avanzados -->
+        <div class="content-section">
+            <h2 class="section-title"><span>🚀</span> Soluciones con Código</h2>
+            <div class="topic-card">
+                <h3>Ejemplos de Aplicación</h3>
+                <ul>
+                    <li><strong>Preference Centers Personalizados:</strong> Crear una página donde el usuario gestione sus suscripciones usando AMPscript.</li>
+                    <li><strong>Loyalty Emails:</strong> Emails que muestran el saldo de puntos y la próxima recompensa calculada en tiempo real.</li>
+                    <li><strong>Engagement Splits Avanzados:</strong> Dividir trayectorias basadas en clics en links específicos generados con código.</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>Konozca &copy; 2026 | Material diseñado para formación profesional en Salesforce Marketing Cloud.</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>

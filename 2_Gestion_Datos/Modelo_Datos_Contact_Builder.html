@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Datos & Contact Builder — Knowledge Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../marketing_style.css">
+</head>
+
+<body>
+    <div class="back-bar">
+        <div class="container-flex">
+            <a href="../START.html" class="back-link">← Volver al Hub Principal</a>
+            <span class="badge badge-orange">Trail 2: Gestión de Datos</span>
+        </div>
+    </div>
+
+    <div class="container" style="padding-top: 40px;">
+
+        <header style="text-align: left; padding-bottom: 20px;">
+            <h1>Gestión de Datos & Contactos</h1>
+            <p class="subtitle">Construir un modelo de datos sólido es la base de toda acción de marketing efectiva. Aprende a organizar, segmentar y mantener los datos de tus contactos en Marketing Cloud.</p>
+        </header>
+
+        <!-- Sección 1: Modelo de Datos -->
+        <div class="content-section">
+            <h2 class="section-title"><span>📐</span> Modelo de Datos en Marketing Cloud</h2>
+            <p style="margin-bottom: 20px;">Antes de configurar cualquier envío, es fundamental entender cómo Marketing Cloud estructura y almacena los datos.</p>
+
+            <div class="topic-card">
+                <h3>Tipos de Almacenamiento de Datos</h3>
+                <ul>
+                    <li><strong>Data Extensions (DE):</strong> Tablas relacionales que almacenan cualquier tipo de dato (contactos, productos, pedidos). Son la estructura de datos principal y más flexible de MC.</li>
+                    <li><strong>Lists (Listas):</strong> Estructura simple y legada de almacenamiento de suscriptores (email + atributos básicos). Menos flexible que las DE.</li>
+                    <li><strong>Synchronized Data Extensions:</strong> Data Extensions que se sincronizan automáticamente desde Salesforce CRM (Leads, Contacts, Accounts, etc.).</li>
+                    <li><strong>All Subscribers List:</strong> El registro maestro de todos los suscriptores a nivel de cuenta.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Data Extensions: Tipos y Configuración</h3>
+                <ul>
+                    <li><strong>Standard DE:</strong> Tabla de datos genérica creada manualmente para cualquier propósito.</li>
+                    <li><strong>Sendable DE:</strong> Una DE marcada como "sendable" puede usarse directamente para enviar emails (necesita un campo de suscriptor y un campo de email).</li>
+                    <li><strong>Data Retention Policy:</strong> Reglas automáticas para borrar registros de una DE después de un período definido (fundamental para cumplimiento GDPR).</li>
+                    <li><strong>Campos clave:</strong> Tipo de dato (texto, número, fecha, booleano), longitud, requerido/nulo, y si es clave primaria.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sección 2: Contact Builder -->
+        <div class="content-section">
+            <h2 class="section-title"><span>🗂️</span> Contact Builder: Visión 360 del Cliente</h2>
+            <p style="margin-bottom: 20px;">Contact Builder permite crear un modelo de datos que da a las empresas una visión única y unificada de sus clientes, conectando datos de múltiples fuentes.</p>
+
+            <div class="topic-card">
+                <h3>Componentes de Contact Builder</h3>
+                <ul>
+                    <li><strong>Data Designer:</strong> Interfaz visual para definir cómo se relacionan los datos entre sí (relaciones entre Data Extensions y el registro de contacto).</li>
+                    <li><strong>Attribute Groups:</strong> Agrupaciones de Data Extensions relacionadas que forman una "vista" del contacto (ej. "Grupo de Compras" con pedidos, productos, etc.).</li>
+                    <li><strong>Population:</strong> El conjunto de registros que define quiénes son "contactos" en tu modelo de datos (normalmente la DE principal con el ContactKey).</li>
+                    <li><strong>ContactKey:</strong> Identificador único de cada contacto en MC. Debe ser consistente en todos los sistemas para evitar duplicados.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Fuentes de Datos</h3>
+                <ul>
+                    <li><strong>Salesforce CRM:</strong> Sincronización de objetos de Sales/Service Cloud vía Marketing Cloud Connect.</li>
+                    <li><strong>FTP / SFTP:</strong> Carga de archivos desde sistemas externos de forma automatizada.</li>
+                    <li><strong>API:</strong> Inserción de datos en tiempo real desde aplicaciones web/móviles.</li>
+                    <li><strong>CloudPages / Forms:</strong> Captura de datos directamente desde landing pages y formularios.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sección 3: Gestión de Contactos -->
+        <div class="content-section">
+            <h2 class="section-title"><span>👤</span> Gestión de Contactos</h2>
+
+            <div class="topic-card">
+                <h3>Búsqueda y Mantenimiento de Registros</h3>
+                <ul>
+                    <li><strong>Contact Management UI:</strong> Buscar contactos individuales por email o ContactKey y ver su historial de actividad (envíos, aperturas, clics, bajas).</li>
+                    <li><strong>Subscriber Status:</strong> Un contacto puede tener estado Active, Bounced, Unsubscribed, Held. Solo los Active reciben emails.</li>
+                    <li><strong>Cómo construir y crecer tu lista:</strong> Landing pages con formularios, formularios en redes sociales, lead ads, importaciones desde CRM.</li>
+                    <li><strong>Opt-in confirmado (Double Opt-in):</strong> Proceso que envía un email de confirmación antes de añadir al suscriptor. Mejor calidad de lista.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Eliminación de Contactos (Contact Deletion)</h3>
+                <ul>
+                    <li><strong>¿Cuándo eliminar?</strong> Cuando un contacto ejerce su derecho al olvido (GDPR), cuando el dato es erróneo, o por política de retención.</li>
+                    <li><strong>¿Cómo se hace?</strong> A través de la herramienta Contact Delete en Contact Builder. El proceso es permanente e irreversible.</li>
+                    <li><strong>¿Qué se borra?</strong> El registro de contacto y todos los datos asociados en las Data Extensions. No se borran los datos de envíos ya realizados.</li>
+                    <li><strong>Impacto en Business Units:</strong> La eliminación en la BU principal elimina el contacto en todas las BUs hijas.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sección 4: Segmentación de Audiencias -->
+        <div class="content-section">
+            <h2 class="section-title"><span>🎯</span> Segmentación de Audiencias</h2>
+            <p style="margin-bottom: 20px;">Enviar el mensaje correcto a la persona adecuada en el momento exacto. La segmentación precisa maximiza la relevancia y el ROI de tus campañas.</p>
+
+            <div class="topic-card">
+                <h3>Herramientas de Segmentación</h3>
+                <ul>
+                    <li><strong>Filtered Data Extensions:</strong> Versión filtrada de una DE existente basada en criterios de atributos (ej. "Clientes de Madrid que han comprado en los últimos 30 días").</li>
+                    <li><strong>Query Activities (SQL):</strong> Consultas SQL avanzadas en Automation Studio para crear segmentos complejos cruzando múltiples tablas.</li>
+                    <li><strong>Salesforce Audiences:</strong> Segmentos creados desde reportes de Salesforce CRM y sincronizados a MC.</li>
+                    <li><strong>Random Data Extensions:</strong> División aleatoria de audiencias para pruebas A/B controladas.</li>
+                </ul>
+            </div>
+
+            <div class="topic-card">
+                <h3>Estrategia de Segmentación</h3>
+                <ul>
+                    <li><strong>Segmentación Demográfica:</strong> Por características de la persona (edad, ciudad, sector).</li>
+                    <li><strong>Segmentación por Comportamiento:</strong> Por acciones pasadas (compras, aperturas de email, visitas web).</li>
+                    <li><strong>Segmentación por Ciclo de Vida:</strong> Nuevos suscriptores, clientes activos, clientes en riesgo, clientes perdidos.</li>
+                    <li><strong>RFM (Recency, Frequency, Monetary):</strong> Modelo de segmentación por recencia, frecuencia y valor monetario de las compras.</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>Konozca &copy; 2026 | Material diseñado para formación profesional en Salesforce Marketing Cloud.<br>
+            Basado en el Trail: <em>Implement Marketing Cloud Engagement — Gestión de Datos</em></p>
+        </footer>
+
+    </div>
+</body>
+
+</html>
