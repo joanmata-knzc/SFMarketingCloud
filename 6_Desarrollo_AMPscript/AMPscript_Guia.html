@@ -19,7 +19,7 @@
 
     <div class="container" style="padding-top: 40px;">
 
-        <header style="text-align: left; padding-bottom: 20px;">
+        <header>
             <h1>Desarrollo & AMPscript</h1>
             <p class="subtitle">Personalización programática avanzada: AMPscript, SSJS, GTL, APIs, Automation Studio
                 estratégico y Custom Preference Center con CloudPages.</p>
@@ -51,7 +51,8 @@
                     <li><strong>Concat():</strong> Concatenar cadenas de texto para construir URLs dinámicas o mensajes.
                     </li>
                     <li><strong>IIF():</strong> If-inline en una sola línea. Equivalente a un operador ternario:
-                        <code>IIF(@edad >= 18, "Adulto", "Menor")</code></li>
+                        <code>IIF(@edad >= 18, "Adulto", "Menor")</code>
+                    </li>
                 </ul>
             </div>
 
@@ -60,7 +61,8 @@
                 <ul>
                     <li><strong>Delimitadores:</strong> El código AMPscript va encerrado entre <code>%%[</code> y
                         <code>]%%</code> para bloques de código, o <code>%%=</code> y <code>=%%</code> para expresiones
-                        inline.</li>
+                        inline.
+                    </li>
                     <li><strong>Variables:</strong> Se declaran con <code>SET @variable = valor</code>. Los nombres de
                         variable llevan siempre el prefijo @.</li>
                     <li><strong>Comentarios:</strong> <code>/* Este es un comentario */</code> dentro de bloques
@@ -100,9 +102,11 @@
                     <li><strong>Escenario:</strong> Email que muestra los 3 productos más relevantes para cada contacto,
                         extraídos de una DE de recomendaciones precalculadas por el motor de recomendaciones.</li>
                     <li><strong>Función clave:</strong>
-                        <code>SET @rows = LookupRows("DE_Recomendaciones", "ContactKey", _subscriberkey)</code></li>
+                        <code>SET @rows = LookupRows("DE_Recomendaciones", "ContactKey", _subscriberkey)</code>
+                    </li>
                     <li><strong>Iteración:</strong> <code>FOR @i = 1 TO RowCount(@rows) DO</code> →
-                        <code>SET @row = Row(@rows, @i)</code> → renderizar cada producto con sus datos.</li>
+                        <code>SET @row = Row(@rows, @i)</code> → renderizar cada producto con sus datos.
+                    </li>
                     <li><strong>Datos necesarios en la DE:</strong> ContactKey, ProductID, ProductName, ProductImage
                         (URL), ProductURL, ProductPrice.</li>
                     <li><strong>Fallback:</strong> Si el contacto no tiene recomendaciones
@@ -120,7 +124,8 @@
                         IF/ELSEIF que envuelven el contenido en cada idioma.</li>
                     <li><strong>Método con DE de traducciones:</strong>
                         <code>SET @texto_cta = Lookup("DE_Traducciones", "Texto", "Clave", "cta_comprar", "Idioma", @idioma)</code>.
-                        Separa el contenido del código, más fácil de mantener.</li>
+                        Separa el contenido del código, más fácil de mantener.
+                    </li>
                     <li><strong>Ventaja del método DE:</strong> El equipo de contenido puede actualizar las traducciones
                         en la DE sin tocar el código AMPscript del email.</li>
                 </ul>
@@ -133,7 +138,8 @@
                         estructuras de datos JSON o mostrar listas de elementos (catálogo, menú, lista de pedidos) de
                         forma más limpia.</li>
                     <li><strong>Sintaxis Handlebars:</strong> <code>{{#each products}} ... {{/each}}</code> para iterar.
-                        <code>{{product.name}}</code> para acceder a propiedades.</li>
+                        <code>{{product.name}}</code> para acceder a propiedades.
+                    </li>
                     <li><strong>Datos desde Content Builder:</strong> GTL puede consumir datos de bloques de contenido
                         de tipo "JSON" definidos en Content Builder.</li>
                     <li><strong>Combinación AMPscript + GTL:</strong> Es posible usar ambos en el mismo email según las
@@ -157,10 +163,12 @@
                     <li><strong>Solución AMPscript:</strong> Generar URLs únicas con parámetros que identifiquen la
                         elección del contacto (ej. interés en el producto A o en el producto B).</li>
                     <li><strong>Código ejemplo:</strong>
-                        <code>SET @urlA = Concat("https://web.com/oferta?sub=", _subscriberkey, "&op=A")</code></li>
+                        <code>SET @urlA = Concat("https://web.com/oferta?sub=", _subscriberkey, "&op=A")</code>
+                    </li>
                     <li><strong>Captura en CloudPages:</strong> La landing page de destino usa AMPscript para leer el
                         parámetro de la URL y registrar la elección en una DE:
-                        <code>UpsertData("DE_Elecciones", 1, "ContactKey", @sub, "Eleccion", @op)</code></li>
+                        <code>UpsertData("DE_Elecciones", 1, "ContactKey", @sub, "Eleccion", @op)</code>
+                    </li>
                     <li><strong>Split en Journey:</strong> Un Decision Split en JB consulta esa DE (<code>Lookup</code>
                         en el split) para dirigir al contacto al camino correcto según su elección registrada.</li>
                 </ul>
@@ -195,7 +203,8 @@
                         APIs externas, lógica de negocio que AMPscript no puede manejar.</li>
                     <li><strong>Sintaxis clave:</strong> <code>Platform.Load("Core", "1");</code> para cargar librerías.
                         Acceso a objetos de MC como <code>DataExtension</code>, <code>Subscriber</code>,
-                        <code>HTTPPost</code>.</li>
+                        <code>HTTPPost</code>.
+                    </li>
                     <li><strong>Dónde se usa:</strong> CloudPages (landing pages, formularios avanzados), Script
                         Activity en Automation Studio.</li>
                     <li><strong>Limitación:</strong> No se puede usar en cuerpos de email; solo AMPscript y GTL son
@@ -286,7 +295,8 @@
                         Evitar SELECT * y JOINs innecesarios. Usar índices (primary keys) siempre que sea posible.</li>
                     <li><strong>Manejo de duplicados:</strong> Usar <code>DISTINCT</code> o
                         <code>ROW_NUMBER() OVER (PARTITION BY ContactKey ORDER BY FechaCompra DESC)</code> para asegurar
-                        registros únicos por contacto.</li>
+                        registros únicos por contacto.
+                    </li>
                     <li><strong>Variables de fecha dinámicas:</strong> <code>DATEADD(DAY, -30, GETDATE())</code> para
                         crear segmentos de los últimos N días sin tener que actualizar la query cada día.</li>
                     <li><strong>Testing:</strong> Probar primero con una DE de prueba y pocos registros antes de
@@ -328,7 +338,8 @@
                         cada tipo de comunicación.</li>
                     <li><strong>Enlace desde email:</strong> Sustituir el enlace del Subscription Center por defecto con
                         una URL de CloudPages que incluye el ContactKey encriptado como parámetro:
-                        <code>%%=RedirectTo(CloudPagesURL(ID_pagina, "ck", _subscriberkey))=%%</code></li>
+                        <code>%%=RedirectTo(CloudPagesURL(ID_pagina, "ck", _subscriberkey))=%%</code>
+                    </li>
                 </ul>
             </div>
 
@@ -338,7 +349,8 @@
                     <li><strong>Paso 1 — Leer preferencias actuales:</strong> Al cargar la página, usar
                         <code>SET @ck = RequestParameter("ck")</code> para obtener el ContactKey de la URL. Luego
                         <code>Lookup()</code> para leer el estado actual de cada suscripción y pre-marcar los checkboxes
-                        del formulario.</li>
+                        del formulario.
+                    </li>
                     <li><strong>Paso 2 — Formulario HTML:</strong> Un checkbox por cada categoría de comunicación. El
                         atributo <code>name</code> y <code>value</code> de cada checkbox corresponde a la categoría en
                         la DE.</li>
@@ -347,7 +359,8 @@
                     </li>
                     <li><strong>Paso 4 — Actualizar Publication Lists:</strong> Usar <code>SetObjectProperty()</code> e
                         <code>InvokeUpdate()</code> en AMPscript (o el objeto <code>Subscriber</code> en SSJS) para
-                        actualizar el estado de suscripción en cada Publication List según las nuevas preferencias.</li>
+                        actualizar el estado de suscripción en cada Publication List según las nuevas preferencias.
+                    </li>
                     <li><strong>Paso 5 — Confirmar:</strong> Mostrar un mensaje de confirmación en la misma página o
                         redirigir a una página de agradecimiento.</li>
                 </ul>
