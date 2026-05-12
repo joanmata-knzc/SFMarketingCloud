@@ -21,36 +21,54 @@
 
         <header style="text-align: left; padding-bottom: 20px;">
             <h1>Desarrollo & AMPscript</h1>
-            <p class="subtitle">Personalización programática avanzada: AMPscript, SSJS, GTL, APIs, Automation Studio estratégico y Custom Preference Center con CloudPages.</p>
+            <p class="subtitle">Personalización programática avanzada: AMPscript, SSJS, GTL, APIs, Automation Studio
+                estratégico y Custom Preference Center con CloudPages.</p>
         </header>
 
         <!-- Sección 1: Introducción a AMPscript -->
         <div class="content-section">
             <h2 class="section-title"><span>💻</span> ¿Qué es AMPscript?</h2>
-            <p style="margin-bottom: 20px;">AMPscript es el lenguaje de scripting propietario de Salesforce Marketing Cloud, diseñado para incrustar contenido dinámico y lógica de negocio en emails, landing pages y mensajes SMS.</p>
+            <p style="margin-bottom: 20px;">AMPscript es el lenguaje de scripting propietario de Salesforce Marketing
+                Cloud, diseñado para incrustar contenido dinámico y lógica de negocio en emails, landing pages y
+                mensajes SMS.</p>
 
             <div class="topic-card">
                 <h3>Funciones Fundamentales</h3>
                 <ul>
-                    <li><strong>Lookup():</strong> Recuperar un único valor de una Data Extension externa. Ej: <code>SET @puntos = Lookup("DE_Fidelizacion", "Puntos", "ContactKey", _subscriberkey)</code></li>
-                    <li><strong>LookupRows():</strong> Recuperar múltiples registros de una DE. Devuelve un conjunto de filas iterable con un bucle FOR.</li>
-                    <li><strong>IF / ELSEIF / ELSE:</strong> Lógica condicional para mostrar u ocultar secciones de contenido según los datos del contacto.</li>
-                    <li><strong>Formatting:</strong> Cambiar el formato de fechas (<code>FormatDate</code>), números (<code>FormatNumber</code>) o textos (<code>ProperCase</code> para capitalizar nombres).</li>
-                    <li><strong>UpsertData():</strong> Escribir o actualizar un registro en una Data Extension desde una landing page de CloudPages.</li>
-                    <li><strong>AttributeValue():</strong> Recuperar el valor de un atributo del perfil del suscriptor.</li>
-                    <li><strong>Concat():</strong> Concatenar cadenas de texto para construir URLs dinámicas o mensajes.</li>
-                    <li><strong>IIF():</strong> If-inline en una sola línea. Equivalente a un operador ternario: <code>IIF(@edad >= 18, "Adulto", "Menor")</code></li>
+                    <li><strong>Lookup():</strong> Recuperar un único valor de una Data Extension externa. Ej:
+                        <code>SET @puntos = Lookup("DE_Fidelizacion", "Puntos", "ContactKey", _subscriberkey)</code>
+                    </li>
+                    <li><strong>LookupRows():</strong> Recuperar múltiples registros de una DE. Devuelve un conjunto de
+                        filas iterable con un bucle FOR.</li>
+                    <li><strong>IF / ELSEIF / ELSE:</strong> Lógica condicional para mostrar u ocultar secciones de
+                        contenido según los datos del contacto.</li>
+                    <li><strong>Formatting:</strong> Cambiar el formato de fechas (<code>FormatDate</code>), números
+                        (<code>FormatNumber</code>) o textos (<code>ProperCase</code> para capitalizar nombres).</li>
+                    <li><strong>UpsertData():</strong> Escribir o actualizar un registro en una Data Extension desde una
+                        landing page de CloudPages.</li>
+                    <li><strong>AttributeValue():</strong> Recuperar el valor de un atributo del perfil del suscriptor.
+                    </li>
+                    <li><strong>Concat():</strong> Concatenar cadenas de texto para construir URLs dinámicas o mensajes.
+                    </li>
+                    <li><strong>IIF():</strong> If-inline en una sola línea. Equivalente a un operador ternario:
+                        <code>IIF(@edad >= 18, "Adulto", "Menor")</code></li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Sintaxis y Estructura</h3>
                 <ul>
-                    <li><strong>Delimitadores:</strong> El código AMPscript va encerrado entre <code>%%[</code> y <code>]%%</code> para bloques de código, o <code>%%=</code> y <code>=%%</code> para expresiones inline.</li>
-                    <li><strong>Variables:</strong> Se declaran con <code>SET @variable = valor</code>. Los nombres de variable llevan siempre el prefijo @.</li>
-                    <li><strong>Comentarios:</strong> <code>/* Este es un comentario */</code> dentro de bloques AMPscript.</li>
-                    <li><strong>Merge Fields clásicos:</strong> <code>%%FirstName%%</code> para datos básicos sin necesidad de AMPscript (equivale a <code>%%=AttributeValue("FirstName")=%%</code>).</li>
-                    <li><strong>Case sensitivity:</strong> AMPscript NO distingue mayúsculas de minúsculas en nombres de funciones y variables.</li>
+                    <li><strong>Delimitadores:</strong> El código AMPscript va encerrado entre <code>%%[</code> y
+                        <code>]%%</code> para bloques de código, o <code>%%=</code> y <code>=%%</code> para expresiones
+                        inline.</li>
+                    <li><strong>Variables:</strong> Se declaran con <code>SET @variable = valor</code>. Los nombres de
+                        variable llevan siempre el prefijo @.</li>
+                    <li><strong>Comentarios:</strong> <code>/* Este es un comentario */</code> dentro de bloques
+                        AMPscript.</li>
+                    <li><strong>Merge Fields clásicos:</strong> <code>%%FirstName%%</code> para datos básicos sin
+                        necesidad de AMPscript (equivale a <code>%%=AttributeValue("FirstName")=%%</code>).</li>
+                    <li><strong>Case sensitivity:</strong> AMPscript NO distingue mayúsculas de minúsculas en nombres de
+                        funciones y variables.</li>
                 </ul>
             </div>
         </div>
@@ -62,42 +80,64 @@
             <div class="topic-card">
                 <h3>Emails de Fidelización con Puntos en Tiempo Real</h3>
                 <ul>
-                    <li><strong>Escenario:</strong> Email que muestra el saldo de puntos del programa de fidelización y calcula la próxima recompensa disponible para cada contacto.</li>
-                    <li><strong>Código clave:</strong> <code>SET @puntos = Lookup("DE_Fidelizacion", "Puntos", "ContactKey", _subscriberkey)</code></li>
-                    <li><strong>Lógica condicional:</strong> <code>IF @puntos >= 500</code> → mostrar cupón de recompensa. Si no → mostrar barra de progreso hacia el siguiente nivel.</li>
-                    <li><strong>Cálculo en tiempo real:</strong> <code>SET @faltante = Subtract(500, @puntos)</code> para mostrar cuántos puntos le quedan al contacto.</li>
-                    <li><strong>Beneficio:</strong> Personalización 1:1 real sin necesidad de pre-generar variantes del email. Un único template sirve para todos los niveles del programa.</li>
+                    <li><strong>Escenario:</strong> Email que muestra el saldo de puntos del programa de fidelización y
+                        calcula la próxima recompensa disponible para cada contacto.</li>
+                    <li><strong>Código clave:</strong>
+                        <code>SET @puntos = Lookup("DE_Fidelizacion", "Puntos", "ContactKey", _subscriberkey)</code>
+                    </li>
+                    <li><strong>Lógica condicional:</strong> <code>IF @puntos >= 500</code> → mostrar cupón de
+                        recompensa. Si no → mostrar barra de progreso hacia el siguiente nivel.</li>
+                    <li><strong>Cálculo en tiempo real:</strong> <code>SET @faltante = Subtract(500, @puntos)</code>
+                        para mostrar cuántos puntos le quedan al contacto.</li>
+                    <li><strong>Beneficio:</strong> Personalización 1:1 real sin necesidad de pre-generar variantes del
+                        email. Un único template sirve para todos los niveles del programa.</li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Recomendaciones de Productos Personalizadas</h3>
                 <ul>
-                    <li><strong>Escenario:</strong> Email que muestra los 3 productos más relevantes para cada contacto, extraídos de una DE de recomendaciones precalculadas por el motor de recomendaciones.</li>
-                    <li><strong>Función clave:</strong> <code>SET @rows = LookupRows("DE_Recomendaciones", "ContactKey", _subscriberkey)</code></li>
-                    <li><strong>Iteración:</strong> <code>FOR @i = 1 TO RowCount(@rows) DO</code> → <code>SET @row = Row(@rows, @i)</code> → renderizar cada producto con sus datos.</li>
-                    <li><strong>Datos necesarios en la DE:</strong> ContactKey, ProductID, ProductName, ProductImage (URL), ProductURL, ProductPrice.</li>
-                    <li><strong>Fallback:</strong> Si el contacto no tiene recomendaciones (<code>IF RowCount(@rows) == 0</code>), mostrar productos destacados por defecto de una DE de bestsellers.</li>
+                    <li><strong>Escenario:</strong> Email que muestra los 3 productos más relevantes para cada contacto,
+                        extraídos de una DE de recomendaciones precalculadas por el motor de recomendaciones.</li>
+                    <li><strong>Función clave:</strong>
+                        <code>SET @rows = LookupRows("DE_Recomendaciones", "ContactKey", _subscriberkey)</code></li>
+                    <li><strong>Iteración:</strong> <code>FOR @i = 1 TO RowCount(@rows) DO</code> →
+                        <code>SET @row = Row(@rows, @i)</code> → renderizar cada producto con sus datos.</li>
+                    <li><strong>Datos necesarios en la DE:</strong> ContactKey, ProductID, ProductName, ProductImage
+                        (URL), ProductURL, ProductPrice.</li>
+                    <li><strong>Fallback:</strong> Si el contacto no tiene recomendaciones
+                        (<code>IF RowCount(@rows) == 0</code>), mostrar productos destacados por defecto de una DE de
+                        bestsellers.</li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Contenido Multiidioma con AMPscript</h3>
                 <ul>
-                    <li><strong>Escenario:</strong> Un único template de email que se renderiza en español, inglés, francés u otro idioma según el atributo del contacto.</li>
-                    <li><strong>Método con IF:</strong> <code>SET @idioma = AttributeValue("Idioma")</code> + bloques IF/ELSEIF que envuelven el contenido en cada idioma.</li>
-                    <li><strong>Método con DE de traducciones:</strong> <code>SET @texto_cta = Lookup("DE_Traducciones", "Texto", "Clave", "cta_comprar", "Idioma", @idioma)</code>. Separa el contenido del código, más fácil de mantener.</li>
-                    <li><strong>Ventaja del método DE:</strong> El equipo de contenido puede actualizar las traducciones en la DE sin tocar el código AMPscript del email.</li>
+                    <li><strong>Escenario:</strong> Un único template de email que se renderiza en español, inglés,
+                        francés u otro idioma según el atributo del contacto.</li>
+                    <li><strong>Método con IF:</strong> <code>SET @idioma = AttributeValue("Idioma")</code> + bloques
+                        IF/ELSEIF que envuelven el contenido en cada idioma.</li>
+                    <li><strong>Método con DE de traducciones:</strong>
+                        <code>SET @texto_cta = Lookup("DE_Traducciones", "Texto", "Clave", "cta_comprar", "Idioma", @idioma)</code>.
+                        Separa el contenido del código, más fácil de mantener.</li>
+                    <li><strong>Ventaja del método DE:</strong> El equipo de contenido puede actualizar las traducciones
+                        en la DE sin tocar el código AMPscript del email.</li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Catálogo Dinámico con GTL (Guide Template Language)</h3>
                 <ul>
-                    <li><strong>¿Cuándo usar GTL en lugar de AMPscript?</strong> Cuando necesitas iterar sobre estructuras de datos JSON o mostrar listas de elementos (catálogo, menú, lista de pedidos) de forma más limpia.</li>
-                    <li><strong>Sintaxis Handlebars:</strong> <code>{{#each products}} ... {{/each}}</code> para iterar. <code>{{product.name}}</code> para acceder a propiedades.</li>
-                    <li><strong>Datos desde Content Builder:</strong> GTL puede consumir datos de bloques de contenido de tipo "JSON" definidos en Content Builder.</li>
-                    <li><strong>Combinación AMPscript + GTL:</strong> Es posible usar ambos en el mismo email según las necesidades de cada bloque de contenido.</li>
+                    <li><strong>¿Cuándo usar GTL en lugar de AMPscript?</strong> Cuando necesitas iterar sobre
+                        estructuras de datos JSON o mostrar listas de elementos (catálogo, menú, lista de pedidos) de
+                        forma más limpia.</li>
+                    <li><strong>Sintaxis Handlebars:</strong> <code>{{#each products}} ... {{/each}}</code> para iterar.
+                        <code>{{product.name}}</code> para acceder a propiedades.</li>
+                    <li><strong>Datos desde Content Builder:</strong> GTL puede consumir datos de bloques de contenido
+                        de tipo "JSON" definidos en Content Builder.</li>
+                    <li><strong>Combinación AMPscript + GTL:</strong> Es posible usar ambos en el mismo email según las
+                        necesidades de cada bloque de contenido.</li>
                 </ul>
             </div>
         </div>
@@ -105,25 +145,39 @@
         <!-- Sección 3: Engagement Splits con AMPscript -->
         <div class="content-section">
             <h2 class="section-title"><span>🔀</span> Engagement Splits con AMPscript</h2>
-            <p style="margin-bottom: 20px;">Combinar AMPscript con Journey Builder permite crear splits basados en el comportamiento del contacto con elementos específicos del email, superando las limitaciones del Engagement Split estándar.</p>
+            <p style="margin-bottom: 20px;">Combinar AMPscript con Journey Builder permite crear splits basados en el
+                comportamiento del contacto con elementos específicos del email, superando las limitaciones del
+                Engagement Split estándar.</p>
 
             <div class="topic-card">
                 <h3>URLs Únicas y Rastreables por Contacto</h3>
                 <ul>
-                    <li><strong>Limitación del Engagement Split estándar:</strong> Solo detecta si el contacto hizo clic en cualquier enlace del email. No distingue en qué enlace específico hizo clic.</li>
-                    <li><strong>Solución AMPscript:</strong> Generar URLs únicas con parámetros que identifiquen la elección del contacto (ej. interés en el producto A o en el producto B).</li>
-                    <li><strong>Código ejemplo:</strong> <code>SET @urlA = Concat("https://web.com/oferta?sub=", _subscriberkey, "&op=A")</code></li>
-                    <li><strong>Captura en CloudPages:</strong> La landing page de destino usa AMPscript para leer el parámetro de la URL y registrar la elección en una DE: <code>UpsertData("DE_Elecciones", 1, "ContactKey", @sub, "Eleccion", @op)</code></li>
-                    <li><strong>Split en Journey:</strong> Un Decision Split en JB consulta esa DE (<code>Lookup</code> en el split) para dirigir al contacto al camino correcto según su elección registrada.</li>
+                    <li><strong>Limitación del Engagement Split estándar:</strong> Solo detecta si el contacto hizo clic
+                        en cualquier enlace del email. No distingue en qué enlace específico hizo clic.</li>
+                    <li><strong>Solución AMPscript:</strong> Generar URLs únicas con parámetros que identifiquen la
+                        elección del contacto (ej. interés en el producto A o en el producto B).</li>
+                    <li><strong>Código ejemplo:</strong>
+                        <code>SET @urlA = Concat("https://web.com/oferta?sub=", _subscriberkey, "&op=A")</code></li>
+                    <li><strong>Captura en CloudPages:</strong> La landing page de destino usa AMPscript para leer el
+                        parámetro de la URL y registrar la elección en una DE:
+                        <code>UpsertData("DE_Elecciones", 1, "ContactKey", @sub, "Eleccion", @op)</code></li>
+                    <li><strong>Split en Journey:</strong> Un Decision Split en JB consulta esa DE (<code>Lookup</code>
+                        en el split) para dirigir al contacto al camino correcto según su elección registrada.</li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Tracking de Preferencias Declaradas en Email</h3>
                 <ul>
-                    <li><strong>Escenario:</strong> Email con dos opciones (ej. "Me interesa el Plan Básico / Me interesa el Plan Premium"). El contacto hace clic en una y el journey reacciona en consecuencia.</li>
-                    <li><strong>Implementación:</strong> Cada botón apunta a una URL única generada con AMPscript que incluye el ContactKey y el identificador de la opción. CloudPages registra la preferencia en MC.</li>
-                    <li><strong>Ventaja:</strong> El journey puede personalizar todo el flujo posterior (emails, ofertas, asignación de comercial) basándose en una preferencia explícita del contacto, no en inferencias.</li>
+                    <li><strong>Escenario:</strong> Email con dos opciones (ej. "Me interesa el Plan Básico / Me
+                        interesa el Plan Premium"). El contacto hace clic en una y el journey reacciona en consecuencia.
+                    </li>
+                    <li><strong>Implementación:</strong> Cada botón apunta a una URL única generada con AMPscript que
+                        incluye el ContactKey y el identificador de la opción. CloudPages registra la preferencia en MC.
+                    </li>
+                    <li><strong>Ventaja:</strong> El journey puede personalizar todo el flujo posterior (emails,
+                        ofertas, asignación de comercial) basándose en una preferencia explícita del contacto, no en
+                        inferencias.</li>
                 </ul>
             </div>
         </div>
@@ -135,32 +189,48 @@
             <div class="topic-card">
                 <h3>Server-Side JavaScript (SSJS)</h3>
                 <ul>
-                    <li><strong>¿Qué es?</strong> Lenguaje basado en JavaScript clásico (ECMAScript 3), ejecutado en el servidor de MC. Más potente que AMPscript para lógica compleja.</li>
-                    <li><strong>Cuándo usarlo:</strong> Procesos complejos de transformación de datos, llamadas HTTP a APIs externas, lógica de negocio que AMPscript no puede manejar.</li>
-                    <li><strong>Sintaxis clave:</strong> <code>Platform.Load("Core", "1");</code> para cargar librerías. Acceso a objetos de MC como <code>DataExtension</code>, <code>Subscriber</code>, <code>HTTPPost</code>.</li>
-                    <li><strong>Dónde se usa:</strong> CloudPages (landing pages, formularios avanzados), Script Activity en Automation Studio.</li>
-                    <li><strong>Limitación:</strong> No se puede usar en cuerpos de email; solo AMPscript y GTL son compatibles con el renderizado de emails en MC.</li>
+                    <li><strong>¿Qué es?</strong> Lenguaje basado en JavaScript clásico (ECMAScript 3), ejecutado en el
+                        servidor de MC. Más potente que AMPscript para lógica compleja.</li>
+                    <li><strong>Cuándo usarlo:</strong> Procesos complejos de transformación de datos, llamadas HTTP a
+                        APIs externas, lógica de negocio que AMPscript no puede manejar.</li>
+                    <li><strong>Sintaxis clave:</strong> <code>Platform.Load("Core", "1");</code> para cargar librerías.
+                        Acceso a objetos de MC como <code>DataExtension</code>, <code>Subscriber</code>,
+                        <code>HTTPPost</code>.</li>
+                    <li><strong>Dónde se usa:</strong> CloudPages (landing pages, formularios avanzados), Script
+                        Activity en Automation Studio.</li>
+                    <li><strong>Limitación:</strong> No se puede usar en cuerpos de email; solo AMPscript y GTL son
+                        compatibles con el renderizado de emails en MC.</li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>APIs de Marketing Cloud</h3>
                 <ul>
-                    <li><strong>REST API:</strong> Para integraciones modernas: disparar envíos transaccionales (Triggered Sends), gestionar activos de Content Builder, insertar datos en Data Extensions, gestionar journeys y suscriptores.</li>
-                    <li><strong>SOAP API:</strong> Para operaciones de datos heredadas y de bajo nivel. Usa XML. Muchas operaciones de SOAP están siendo replicadas en REST con mejoras.</li>
-                    <li><strong>Autenticación OAuth 2.0:</strong> Las llamadas a la API de MC requieren un token de acceso obtenido previamente con Client ID y Client Secret de una App instalada en MC.</li>
-                    <li><strong>API de Journey Builder:</strong> Permite disparar eventos de entrada a journeys vía API Event (REST), esencial para integraciones en tiempo real desde webs o apps.</li>
-                    <li><strong>Marketing Cloud SDKs:</strong> SDKs para iOS y Android que facilitan la integración de aplicaciones móviles con MC para push notifications y gestión de preferencias.</li>
+                    <li><strong>REST API:</strong> Para integraciones modernas: disparar envíos transaccionales
+                        (Triggered Sends), gestionar activos de Content Builder, insertar datos en Data Extensions,
+                        gestionar journeys y suscriptores.</li>
+                    <li><strong>SOAP API:</strong> Para operaciones de datos heredadas y de bajo nivel. Usa XML. Muchas
+                        operaciones de SOAP están siendo replicadas en REST con mejoras.</li>
+                    <li><strong>Autenticación OAuth 2.0:</strong> Las llamadas a la API de MC requieren un token de
+                        acceso obtenido previamente con Client ID y Client Secret de una App instalada en MC.</li>
+                    <li><strong>API de Journey Builder:</strong> Permite disparar eventos de entrada a journeys vía API
+                        Event (REST), esencial para integraciones en tiempo real desde webs o apps.</li>
+                    <li><strong>Marketing Cloud SDKs:</strong> SDKs para iOS y Android que facilitan la integración de
+                        aplicaciones móviles con MC para push notifications y gestión de preferencias.</li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Developer Resources</h3>
                 <ul>
-                    <li><strong>Marketing Cloud Developer Center:</strong> Documentación oficial completa de todas las funciones AMPscript, SSJS, REST y SOAP API.</li>
-                    <li><strong>AppExchange:</strong> Marketplace de aplicaciones y conectores de terceros para extender las capacidades de MC sin desarrollo a medida.</li>
-                    <li><strong>Postman Collections:</strong> Salesforce publica colecciones de Postman con todas las llamadas REST de MC pre-configuradas para facilitar el desarrollo y testing.</li>
-                    <li><strong>SSJS Playground:</strong> Herramientas de la comunidad para testear código SSJS sin necesidad de desplegarlo en producción.</li>
+                    <li><strong>Marketing Cloud Developer Center:</strong> Documentación oficial completa de todas las
+                        funciones AMPscript, SSJS, REST y SOAP API.</li>
+                    <li><strong>AppExchange:</strong> Marketplace de aplicaciones y conectores de terceros para extender
+                        las capacidades de MC sin desarrollo a medida.</li>
+                    <li><strong>Postman Collections:</strong> Salesforce publica colecciones de Postman con todas las
+                        llamadas REST de MC pre-configuradas para facilitar el desarrollo y testing.</li>
+                    <li><strong>SSJS Playground:</strong> Herramientas de la comunidad para testear código SSJS sin
+                        necesidad de desplegarlo en producción.</li>
                 </ul>
             </div>
         </div>
@@ -168,37 +238,59 @@
         <!-- Sección 5: Marketing Automation Strategies -->
         <div class="content-section">
             <h2 class="section-title"><span>⚙️</span> Marketing Automation: Estrategias Avanzadas</h2>
-            <p style="margin-bottom: 20px;">La automatización eficiente combina datos de primera parte, plantillas reutilizables y flujos bien definidos para escalar el marketing sin escalar el equipo.</p>
+            <p style="margin-bottom: 20px;">La automatización eficiente combina datos de primera parte, plantillas
+                reutilizables y flujos bien definidos para escalar el marketing sin escalar el equipo.</p>
 
             <div class="topic-card">
                 <h3>Pilares de una Estrategia de Automatización Sólida</h3>
                 <ul>
-                    <li><strong>First-Party Data:</strong> Priorizar los datos propios (comportamiento web, historial de compras, preferencias declaradas) sobre datos de terceros. Son más precisos y resistentes a cambios regulatorios como la eliminación de cookies de terceros.</li>
-                    <li><strong>Plantillas reutilizables:</strong> Diseñar emails, journeys y automations que se puedan clonar y adaptar fácilmente. Una buena plantilla de welcome series sirve para múltiples segmentos de producto.</li>
-                    <li><strong>Modularidad:</strong> Construir automations con actividades pequeñas y bien nombradas, en lugar de monolitos. Más fácil de debuguear, modificar y reutilizar.</li>
-                    <li><strong>Naming conventions:</strong> Establecer convenciones claras para carpetas, DEs y automations: [TipoNegocio]_[Funcion]_[Frecuencia] (ej. "MKTG_SegmentacionVIP_Daily").</li>
-                    <li><strong>Monitorización:</strong> Revisar regularmente el historial de ejecución de automations en Automation Studio para detectar errores antes de que escalen a problemas de datos.</li>
+                    <li><strong>First-Party Data:</strong> Priorizar los datos propios (comportamiento web, historial de
+                        compras, preferencias declaradas) sobre datos de terceros. Son más precisos y resistentes a
+                        cambios regulatorios como la eliminación de cookies de terceros.</li>
+                    <li><strong>Plantillas reutilizables:</strong> Diseñar emails, journeys y automations que se puedan
+                        clonar y adaptar fácilmente. Una buena plantilla de welcome series sirve para múltiples
+                        segmentos de producto.</li>
+                    <li><strong>Modularidad:</strong> Construir automations con actividades pequeñas y bien nombradas,
+                        en lugar de monolitos. Más fácil de debuguear, modificar y reutilizar.</li>
+                    <li><strong>Naming conventions:</strong> Establecer convenciones claras para carpetas, DEs y
+                        automations: [TipoNegocio]_[Funcion]_[Frecuencia] (ej. "MKTG_SegmentacionVIP_Daily").</li>
+                    <li><strong>Monitorización:</strong> Revisar regularmente el historial de ejecución de automations
+                        en Automation Studio para detectar errores antes de que escalen a problemas de datos.</li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Patrones de Integración con FTP / SFTP</h3>
                 <ul>
-                    <li><strong>File Drop Pattern (más común):</strong> Sistema externo deposita un archivo CSV en el SFTP de MC → File Drop Automation se activa → Import File Activity carga los datos a una DE → SQL Query los procesa → Journey Entry arranca.</li>
-                    <li><strong>Scheduled Import Pattern:</strong> Sin File Drop; una Automation programada (ej. cada noche a las 01:00) busca el archivo en el FTP con un nombre predecible y lo importa.</li>
-                    <li><strong>Scheduled Export Pattern:</strong> Automation nocturna extrae datos de rendimiento de MC con Data Extract Activity → los deposita en el SFTP → sistema de BI externo los consume cada mañana.</li>
-                    <li><strong>Naming de archivos con timestamp:</strong> Usar timestamps en los nombres de archivo para evitar sobrescrituras y facilitar la auditoría (ej. <code>leads_20260101_0200.csv</code>).</li>
+                    <li><strong>File Drop Pattern (más común):</strong> Sistema externo deposita un archivo CSV en el
+                        SFTP de MC → File Drop Automation se activa → Import File Activity carga los datos a una DE →
+                        SQL Query los procesa → Journey Entry arranca.</li>
+                    <li><strong>Scheduled Import Pattern:</strong> Sin File Drop; una Automation programada (ej. cada
+                        noche a las 01:00) busca el archivo en el FTP con un nombre predecible y lo importa.</li>
+                    <li><strong>Scheduled Export Pattern:</strong> Automation nocturna extrae datos de rendimiento de MC
+                        con Data Extract Activity → los deposita en el SFTP → sistema de BI externo los consume cada
+                        mañana.</li>
+                    <li><strong>Naming de archivos con timestamp:</strong> Usar timestamps en los nombres de archivo
+                        para evitar sobrescrituras y facilitar la auditoría (ej. <code>leads_20260101_0200.csv</code>).
+                    </li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>SQL en Automation Studio: Mejores Prácticas</h3>
                 <ul>
-                    <li><strong>Overwrite vs. Append vs. Update:</strong> Al configurar un Query Activity, elegir correctamente si la DE destino debe sobrescribirse completamente, añadir filas o actualizar registros existentes.</li>
-                    <li><strong>Performance:</strong> Las queries en MC se ejecutan sobre un motor SQL con limitaciones. Evitar SELECT * y JOINs innecesarios. Usar índices (primary keys) siempre que sea posible.</li>
-                    <li><strong>Manejo de duplicados:</strong> Usar <code>DISTINCT</code> o <code>ROW_NUMBER() OVER (PARTITION BY ContactKey ORDER BY FechaCompra DESC)</code> para asegurar registros únicos por contacto.</li>
-                    <li><strong>Variables de fecha dinámicas:</strong> <code>DATEADD(DAY, -30, GETDATE())</code> para crear segmentos de los últimos N días sin tener que actualizar la query cada día.</li>
-                    <li><strong>Testing:</strong> Probar primero con una DE de prueba y pocos registros antes de ejecutar sobre las DEs de producción.</li>
+                    <li><strong>Overwrite vs. Append vs. Update:</strong> Al configurar un Query Activity, elegir
+                        correctamente si la DE destino debe sobrescribirse completamente, añadir filas o actualizar
+                        registros existentes.</li>
+                    <li><strong>Performance:</strong> Las queries en MC se ejecutan sobre un motor SQL con limitaciones.
+                        Evitar SELECT * y JOINs innecesarios. Usar índices (primary keys) siempre que sea posible.</li>
+                    <li><strong>Manejo de duplicados:</strong> Usar <code>DISTINCT</code> o
+                        <code>ROW_NUMBER() OVER (PARTITION BY ContactKey ORDER BY FechaCompra DESC)</code> para asegurar
+                        registros únicos por contacto.</li>
+                    <li><strong>Variables de fecha dinámicas:</strong> <code>DATEADD(DAY, -30, GETDATE())</code> para
+                        crear segmentos de los últimos N días sin tener que actualizar la query cada día.</li>
+                    <li><strong>Testing:</strong> Probar primero con una DE de prueba y pocos registros antes de
+                        ejecutar sobre las DEs de producción.</li>
                 </ul>
             </div>
         </div>
@@ -206,45 +298,73 @@
         <!-- Sección 6: Custom Preference Center con CloudPages -->
         <div class="content-section">
             <h2 class="section-title"><span>🎛️</span> Custom Preference Center con CloudPages</h2>
-            <p style="margin-bottom: 20px;">El Subscription Center por defecto de MC es funcional pero genérico. CloudPages + AMPscript permiten crear un preference center completamente personalizado, de marca y con experiencia de usuario superior.</p>
+            <p style="margin-bottom: 20px;">El Subscription Center por defecto de MC es funcional pero genérico.
+                CloudPages + AMPscript permiten crear un preference center completamente personalizado, de marca y con
+                experiencia de usuario superior.</p>
 
             <div class="topic-card">
                 <h3>¿Qué es CloudPages?</h3>
                 <ul>
-                    <li><strong>Definición:</strong> Módulo de MC para crear landing pages, microsites, formularios y páginas interactivas alojadas en los servidores de Salesforce.</li>
-                    <li><strong>Casos de uso:</strong> Preference centers, páginas de confirmación de opt-in, formularios de captura de leads, páginas de aterrizaje de campañas, portales de cliente básicos.</li>
-                    <li><strong>Tecnología:</strong> HTML + CSS + AMPscript (o SSJS) + JavaScript en el cliente. Se pueden usar frameworks CSS (Bootstrap, Tailwind) via CDN.</li>
-                    <li><strong>Dominio personalizado:</strong> MC provee un dominio por defecto, pero se puede configurar un subdominio propio (ej. <code>preferencias.tumarca.com</code>).</li>
+                    <li><strong>Definición:</strong> Módulo de MC para crear landing pages, microsites, formularios y
+                        páginas interactivas alojadas en los servidores de Salesforce.</li>
+                    <li><strong>Casos de uso:</strong> Preference centers, páginas de confirmación de opt-in,
+                        formularios de captura de leads, páginas de aterrizaje de campañas, portales de cliente básicos.
+                    </li>
+                    <li><strong>Tecnología:</strong> HTML + CSS + AMPscript (o SSJS) + JavaScript en el cliente. Se
+                        pueden usar frameworks CSS (Bootstrap, Tailwind) via CDN.</li>
+                    <li><strong>Dominio personalizado:</strong> MC provee un dominio por defecto, pero se puede
+                        configurar un subdominio propio (ej. <code>preferencias.tumarca.com</code>).</li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Arquitectura del Preference Center Personalizado</h3>
                 <ul>
-                    <li><strong>DE de Preferencias:</strong> Una Data Extension con ContactKey, Email, y un campo booleano por cada categoría de comunicación (ej. NewsletterSemanal, OfertasPromocion, NovedadesProducto).</li>
-                    <li><strong>Publication Lists:</strong> Listas de suscripción en MC que corresponden a cada categoría. El estado de suscripción en Publication Lists determina si el contacto recibe o no cada tipo de comunicación.</li>
-                    <li><strong>Enlace desde email:</strong> Sustituir el enlace del Subscription Center por defecto con una URL de CloudPages que incluye el ContactKey encriptado como parámetro: <code>%%=RedirectTo(CloudPagesURL(ID_pagina, "ck", _subscriberkey))=%%</code></li>
+                    <li><strong>DE de Preferencias:</strong> Una Data Extension con ContactKey, Email, y un campo
+                        booleano por cada categoría de comunicación (ej. NewsletterSemanal, OfertasPromocion,
+                        NovedadesProducto).</li>
+                    <li><strong>Publication Lists:</strong> Listas de suscripción en MC que corresponden a cada
+                        categoría. El estado de suscripción en Publication Lists determina si el contacto recibe o no
+                        cada tipo de comunicación.</li>
+                    <li><strong>Enlace desde email:</strong> Sustituir el enlace del Subscription Center por defecto con
+                        una URL de CloudPages que incluye el ContactKey encriptado como parámetro:
+                        <code>%%=RedirectTo(CloudPagesURL(ID_pagina, "ck", _subscriberkey))=%%</code></li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Implementación Paso a Paso</h3>
                 <ul>
-                    <li><strong>Paso 1 — Leer preferencias actuales:</strong> Al cargar la página, usar <code>SET @ck = RequestParameter("ck")</code> para obtener el ContactKey de la URL. Luego <code>Lookup()</code> para leer el estado actual de cada suscripción y pre-marcar los checkboxes del formulario.</li>
-                    <li><strong>Paso 2 — Formulario HTML:</strong> Un checkbox por cada categoría de comunicación. El atributo <code>name</code> y <code>value</code> de cada checkbox corresponde a la categoría en la DE.</li>
-                    <li><strong>Paso 3 — Guardar respuestas:</strong> Al enviar el formulario, AMPscript usa <code>UpsertData()</code> para actualizar la DE de preferencias con las selecciones del usuario.</li>
-                    <li><strong>Paso 4 — Actualizar Publication Lists:</strong> Usar <code>SetObjectProperty()</code> e <code>InvokeUpdate()</code> en AMPscript (o el objeto <code>Subscriber</code> en SSJS) para actualizar el estado de suscripción en cada Publication List según las nuevas preferencias.</li>
-                    <li><strong>Paso 5 — Confirmar:</strong> Mostrar un mensaje de confirmación en la misma página o redirigir a una página de agradecimiento.</li>
+                    <li><strong>Paso 1 — Leer preferencias actuales:</strong> Al cargar la página, usar
+                        <code>SET @ck = RequestParameter("ck")</code> para obtener el ContactKey de la URL. Luego
+                        <code>Lookup()</code> para leer el estado actual de cada suscripción y pre-marcar los checkboxes
+                        del formulario.</li>
+                    <li><strong>Paso 2 — Formulario HTML:</strong> Un checkbox por cada categoría de comunicación. El
+                        atributo <code>name</code> y <code>value</code> de cada checkbox corresponde a la categoría en
+                        la DE.</li>
+                    <li><strong>Paso 3 — Guardar respuestas:</strong> Al enviar el formulario, AMPscript usa
+                        <code>UpsertData()</code> para actualizar la DE de preferencias con las selecciones del usuario.
+                    </li>
+                    <li><strong>Paso 4 — Actualizar Publication Lists:</strong> Usar <code>SetObjectProperty()</code> e
+                        <code>InvokeUpdate()</code> en AMPscript (o el objeto <code>Subscriber</code> en SSJS) para
+                        actualizar el estado de suscripción en cada Publication List según las nuevas preferencias.</li>
+                    <li><strong>Paso 5 — Confirmar:</strong> Mostrar un mensaje de confirmación en la misma página o
+                        redirigir a una página de agradecimiento.</li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Casos de Uso del Preference Center</h3>
                 <ul>
-                    <li><strong>Centro de preferencias de comunicación:</strong> El usuario elige qué tipo de emails recibir (newsletter, ofertas, eventos, novedades de producto) en lugar de darse de baja de todo.</li>
-                    <li><strong>Actualización de datos del perfil:</strong> El usuario puede corregir su nombre, empresa o ciudad directamente, actualizando la DE de contactos.</li>
-                    <li><strong>Gestión de frecuencia:</strong> El usuario elige con qué frecuencia quiere recibir comunicaciones (diario, semanal, mensual) y MC adapta el envío.</li>
-                    <li><strong>Opt-in a SMS o WhatsApp:</strong> Añadir canales adicionales al preference center para capturar el consentimiento de nuevos canales de forma explícita y documentada.</li>
+                    <li><strong>Centro de preferencias de comunicación:</strong> El usuario elige qué tipo de emails
+                        recibir (newsletter, ofertas, eventos, novedades de producto) en lugar de darse de baja de todo.
+                    </li>
+                    <li><strong>Actualización de datos del perfil:</strong> El usuario puede corregir su nombre, empresa
+                        o ciudad directamente, actualizando la DE de contactos.</li>
+                    <li><strong>Gestión de frecuencia:</strong> El usuario elige con qué frecuencia quiere recibir
+                        comunicaciones (diario, semanal, mensual) y MC adapta el envío.</li>
+                    <li><strong>Opt-in a SMS o WhatsApp:</strong> Añadir canales adicionales al preference center para
+                        capturar el consentimiento de nuevos canales de forma explícita y documentada.</li>
                 </ul>
             </div>
         </div>
@@ -255,17 +375,27 @@
             <div class="topic-card">
                 <h3>Ejemplos de Aplicación</h3>
                 <ul>
-                    <li><strong>Email de renovación de suscripción:</strong> Muestra el plan actual del usuario, la fecha de vencimiento calculada con AMPscript, el precio de renovación (con descuento calculado si es cliente VIP) y un CTA con URL única para el pago.</li>
-                    <li><strong>Portal de seguimiento de pedido:</strong> CloudPage que el usuario visita desde el email de confirmación. AMPscript lee el ID de pedido de la URL y muestra el estado, fecha estimada y productos del pedido desde una DE de pedidos.</li>
-                    <li><strong>Encuesta post-compra:</strong> Email con 3 opciones de valoración (1, 2, 3 estrellas) como URLs únicas. El clic registra la valoración en una DE. Journey reacciona con un follow-up diferente según la puntuación dada.</li>
-                    <li><strong>Código de descuento único:</strong> Cada contacto recibe un código de descuento único generado por AMPscript (<code>Lookup</code> desde una DE de códigos asignados previamente), evitando que los códigos se compartan.</li>
+                    <li><strong>Email de renovación de suscripción:</strong> Muestra el plan actual del usuario, la
+                        fecha de vencimiento calculada con AMPscript, el precio de renovación (con descuento calculado
+                        si es cliente VIP) y un CTA con URL única para el pago.</li>
+                    <li><strong>Portal de seguimiento de pedido:</strong> CloudPage que el usuario visita desde el email
+                        de confirmación. AMPscript lee el ID de pedido de la URL y muestra el estado, fecha estimada y
+                        productos del pedido desde una DE de pedidos.</li>
+                    <li><strong>Encuesta post-compra:</strong> Email con 3 opciones de valoración (1, 2, 3 estrellas)
+                        como URLs únicas. El clic registra la valoración en una DE. Journey reacciona con un follow-up
+                        diferente según la puntuación dada.</li>
+                    <li><strong>Código de descuento único:</strong> Cada contacto recibe un código de descuento único
+                        generado por AMPscript (<code>Lookup</code> desde una DE de códigos asignados previamente),
+                        evitando que los códigos se compartan.</li>
                 </ul>
             </div>
         </div>
 
         <footer>
-            <p>Konozca &copy; 2026 | Material diseñado para formación profesional en Salesforce Marketing Cloud.<br>
-            Basado en el Trail: <em>Optimize and Grow Your Use of Marketing Cloud Engagement — Herramientas de Desarrollo</em></p>
+            <p>Konozca & Joan Mata &copy; 2026 | Material diseñado para formación profesional en Salesforce Marketing
+                Cloud.<br>
+                Basado en el Trail: <em>Optimize and Grow Your Use of Marketing Cloud Engagement — Herramientas de
+                    Desarrollo</em></p>
         </footer>
 
     </div>

@@ -21,69 +21,98 @@
 
         <header style="text-align: left; padding-bottom: 20px;">
             <h1>Automation & Journey Builder</h1>
-            <p class="subtitle">Automatizando el ciclo de vida del cliente: desde trayectorias 1:1 en tiempo real con Journey Builder hasta procesos masivos de datos con Automation Studio.</p>
+            <p class="subtitle">Automatizando el ciclo de vida del cliente: desde trayectorias 1:1 en tiempo real con
+                Journey Builder hasta procesos masivos de datos con Automation Studio.</p>
         </header>
 
         <!-- Sección 1: Journey Builder Fundamentos -->
         <div class="content-section">
             <h2 class="section-title"><span>⚡</span> Journey Builder: Orquestación 1:1</h2>
-            <p style="margin-bottom: 20px;">Journey Builder diseña trayectorias automatizadas que conectan datos, departamentos y canales para ofrecer experiencias individualizadas a cada cliente en el momento exacto.</p>
+            <p style="margin-bottom: 20px;">Journey Builder diseña trayectorias automatizadas que conectan datos,
+                departamentos y canales para ofrecer experiencias individualizadas a cada cliente en el momento exacto.
+            </p>
 
             <div class="topic-card">
                 <h3>¿Qué es una Trayectoria (Journey)?</h3>
                 <ul>
-                    <li><strong>Definición:</strong> Un flujo automatizado de comunicaciones e interacciones que guía a un contacto a través de una experiencia diseñada con tu marca.</li>
-                    <li><strong>1:1 real:</strong> Cada contacto experimenta la trayectoria de forma individual, basada en sus propios datos y comportamientos en tiempo real.</li>
-                    <li><strong>Multicanal:</strong> Email, SMS, WhatsApp, push notification y actualizaciones en Sales Cloud, todo coordinado desde un único lienzo.</li>
-                    <li><strong>Orientado a objetivos:</strong> Cada journey tiene un Goal definido que determina el éxito (ej. "contacto realiza una compra").</li>
+                    <li><strong>Definición:</strong> Un flujo automatizado de comunicaciones e interacciones que guía a
+                        un contacto a través de una experiencia diseñada con tu marca.</li>
+                    <li><strong>1:1 real:</strong> Cada contacto experimenta la trayectoria de forma individual, basada
+                        en sus propios datos y comportamientos en tiempo real.</li>
+                    <li><strong>Multicanal:</strong> Email, SMS, WhatsApp, push notification y actualizaciones en Sales
+                        Cloud, todo coordinado desde un único lienzo.</li>
+                    <li><strong>Orientado a objetivos:</strong> Cada journey tiene un Goal definido que determina el
+                        éxito (ej. "contacto realiza una compra").</li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Fuentes de Entrada (Entry Sources)</h3>
                 <ul>
-                    <li><strong>Data Extension Entry:</strong> Contactos de una DE de forma programada (ej. todos los días a las 9:00) o al cumplir criterios dinámicos.</li>
-                    <li><strong>API Event Entry:</strong> Un sistema externo envía un evento en tiempo real vía REST API para añadir contactos (ej. registro en web, compra completada).</li>
-                    <li><strong>Salesforce Data Entry:</strong> Cambios en objetos de Sales/Service Cloud disparan la entrada al journey (ej. cuando una Oportunidad se cierra como Ganada).</li>
-                    <li><strong>CloudPages Entry:</strong> Un contacto rellena un formulario en una landing page de Marketing Cloud.</li>
-                    <li><strong>WhatsApp / Inbound Chat:</strong> Un mensaje entrante del cliente inicia la trayectoria de conversación.</li>
+                    <li><strong>Data Extension Entry:</strong> Contactos de una DE de forma programada (ej. todos los
+                        días a las 9:00) o al cumplir criterios dinámicos.</li>
+                    <li><strong>API Event Entry:</strong> Un sistema externo envía un evento en tiempo real vía REST API
+                        para añadir contactos (ej. registro en web, compra completada).</li>
+                    <li><strong>Salesforce Data Entry:</strong> Cambios en objetos de Sales/Service Cloud disparan la
+                        entrada al journey (ej. cuando una Oportunidad se cierra como Ganada).</li>
+                    <li><strong>CloudPages Entry:</strong> Un contacto rellena un formulario en una landing page de
+                        Marketing Cloud.</li>
+                    <li><strong>WhatsApp / Inbound Chat:</strong> Un mensaje entrante del cliente inicia la trayectoria
+                        de conversación.</li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Actividades de una Trayectoria</h3>
                 <ul>
-                    <li><strong>Send Email:</strong> Envío de un email desde Content Builder. Configurable con remitente, asunto dinámico y audiencia.</li>
+                    <li><strong>Send Email:</strong> Envío de un email desde Content Builder. Configurable con
+                        remitente, asunto dinámico y audiencia.</li>
                     <li><strong>Send SMS:</strong> Mensaje de texto vía MobileConnect.</li>
                     <li><strong>Send WhatsApp:</strong> Mensaje de WhatsApp usando una plantilla aprobada por Meta.</li>
-                    <li><strong>Send Push Notification:</strong> Notificación push en la aplicación móvil del cliente.</li>
-                    <li><strong>Update Contact:</strong> Actualizar el valor de un atributo del contacto en MC (ej. marcar como "Onboardado").</li>
-                    <li><strong>Update CRM Record:</strong> Actualizar un campo en Salesforce CRM (ej. cambiar el Stage de un Lead).</li>
-                    <li><strong>Wait by Duration:</strong> Hacer esperar al contacto un tiempo definido (ej. 3 días) antes de la siguiente actividad.</li>
-                    <li><strong>Wait Until Date:</strong> Esperar hasta una fecha específica (ej. fecha de vencimiento del contrato del contacto).</li>
-                    <li><strong>Wait Until Event:</strong> Esperar hasta que ocurra un evento específico (apertura de email, clic) o que pase un tiempo máximo.</li>
+                    <li><strong>Send Push Notification:</strong> Notificación push en la aplicación móvil del cliente.
+                    </li>
+                    <li><strong>Update Contact:</strong> Actualizar el valor de un atributo del contacto en MC (ej.
+                        marcar como "Onboardado").</li>
+                    <li><strong>Update CRM Record:</strong> Actualizar un campo en Salesforce CRM (ej. cambiar el Stage
+                        de un Lead).</li>
+                    <li><strong>Wait by Duration:</strong> Hacer esperar al contacto un tiempo definido (ej. 3 días)
+                        antes de la siguiente actividad.</li>
+                    <li><strong>Wait Until Date:</strong> Esperar hasta una fecha específica (ej. fecha de vencimiento
+                        del contrato del contacto).</li>
+                    <li><strong>Wait Until Event:</strong> Esperar hasta que ocurra un evento específico (apertura de
+                        email, clic) o que pase un tiempo máximo.</li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Control de Flujo: Splits y Joins</h3>
                 <ul>
-                    <li><strong>Decision Split:</strong> Divide el flujo según atributos del contacto o datos de una DE (ej. "¿es cliente VIP? Sí → camino A / No → camino B").</li>
-                    <li><strong>Engagement Split:</strong> Divide el flujo según si el contacto abrió o hizo clic en el último email enviado dentro de la trayectoria.</li>
-                    <li><strong>Random Split:</strong> Distribuye contactos aleatoriamente entre N caminos con porcentajes definidos. Ideal para pruebas A/B en journeys.</li>
-                    <li><strong>Einstein Split:</strong> Usa IA de Einstein para determinar el mejor camino para cada contacto según predicciones de comportamiento futuro.</li>
-                    <li><strong>Join:</strong> Reunifica múltiples caminos del flujo en un único punto antes de continuar con actividades comunes.</li>
+                    <li><strong>Decision Split:</strong> Divide el flujo según atributos del contacto o datos de una DE
+                        (ej. "¿es cliente VIP? Sí → camino A / No → camino B").</li>
+                    <li><strong>Engagement Split:</strong> Divide el flujo según si el contacto abrió o hizo clic en el
+                        último email enviado dentro de la trayectoria.</li>
+                    <li><strong>Random Split:</strong> Distribuye contactos aleatoriamente entre N caminos con
+                        porcentajes definidos. Ideal para pruebas A/B en journeys.</li>
+                    <li><strong>Einstein Split:</strong> Usa IA de Einstein para determinar el mejor camino para cada
+                        contacto según predicciones de comportamiento futuro.</li>
+                    <li><strong>Join:</strong> Reunifica múltiples caminos del flujo en un único punto antes de
+                        continuar con actividades comunes.</li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Configuración Avanzada: Goals, Exit y Re-entry</h3>
                 <ul>
-                    <li><strong>Journey Goal:</strong> Criterio de éxito de la trayectoria. Cuando un contacto lo cumple, puede salir antes de completar todos los pasos (ej. "ha realizado una compra").</li>
-                    <li><strong>Exit Criteria:</strong> Condición que fuerza la salida inmediata independientemente del punto en que esté el contacto (ej. "se ha dado de baja de comunicaciones").</li>
-                    <li><strong>Re-entry:</strong> Configura si un contacto puede volver a entrar a la trayectoria después de haberla completado, de haber cumplido el goal, o nunca.</li>
-                    <li><strong>Contact Evaluation:</strong> Define si los contactos del entry source se evalúan una sola vez o de forma continua (diariamente, cada hora, etc.).</li>
-                    <li><strong>Journey History:</strong> Registro de cada contacto que ha pasado por la trayectoria, con estado (activo, completado, salió por goal, error).</li>
+                    <li><strong>Journey Goal:</strong> Criterio de éxito de la trayectoria. Cuando un contacto lo
+                        cumple, puede salir antes de completar todos los pasos (ej. "ha realizado una compra").</li>
+                    <li><strong>Exit Criteria:</strong> Condición que fuerza la salida inmediata independientemente del
+                        punto en que esté el contacto (ej. "se ha dado de baja de comunicaciones").</li>
+                    <li><strong>Re-entry:</strong> Configura si un contacto puede volver a entrar a la trayectoria
+                        después de haberla completado, de haber cumplido el goal, o nunca.</li>
+                    <li><strong>Contact Evaluation:</strong> Define si los contactos del entry source se evalúan una
+                        sola vez o de forma continua (diariamente, cada hora, etc.).</li>
+                    <li><strong>Journey History:</strong> Registro de cada contacto que ha pasado por la trayectoria,
+                        con estado (activo, completado, salió por goal, error).</li>
                 </ul>
             </div>
         </div>
@@ -95,8 +124,10 @@
             <div class="topic-card">
                 <h3>Welcome Series (Serie de Bienvenida)</h3>
                 <ul>
-                    <li><strong>Objetivo:</strong> Incorporar a los nuevos suscriptores, presentar la marca y guiarlos hacia su primera acción de valor.</li>
-                    <li><strong>Entrada típica:</strong> API Event al registrarse en la web, o DE Entry cuando se añade a la lista de nuevos contactos.</li>
+                    <li><strong>Objetivo:</strong> Incorporar a los nuevos suscriptores, presentar la marca y guiarlos
+                        hacia su primera acción de valor.</li>
+                    <li><strong>Entrada típica:</strong> API Event al registrarse en la web, o DE Entry cuando se añade
+                        a la lista de nuevos contactos.</li>
                     <li><strong>Estructura recomendada:</strong>
                         <ul>
                             <li>Email 1 (inmediato): Bienvenida + confirmación y ventajas clave</li>
@@ -107,16 +138,20 @@
                             <li>No → Email 3: Propuesta diferente con otro ángulo (más visual, más urgente)</li>
                         </ul>
                     </li>
-                    <li><strong>Goal:</strong> "Contacto realizó su primera compra" o "Contacto completó su perfil".</li>
-                    <li><strong>Exit Criteria:</strong> Si el contacto se da de baja en cualquier punto, sale inmediatamente.</li>
+                    <li><strong>Goal:</strong> "Contacto realizó su primera compra" o "Contacto completó su perfil".
+                    </li>
+                    <li><strong>Exit Criteria:</strong> Si el contacto se da de baja en cualquier punto, sale
+                        inmediatamente.</li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Behavioral Triggers: Abandono de Carrito</h3>
                 <ul>
-                    <li><strong>¿Qué son?</strong> Trayectorias que se activan cuando un cliente realiza —o deja de realizar— una acción específica en tu plataforma digital.</li>
-                    <li><strong>Abandono de carrito:</strong> El cliente añade productos pero no completa la compra. MC detecta el evento vía API Event desde la plataforma ecommerce.</li>
+                    <li><strong>¿Qué son?</strong> Trayectorias que se activan cuando un cliente realiza —o deja de
+                        realizar— una acción específica en tu plataforma digital.</li>
+                    <li><strong>Abandono de carrito:</strong> El cliente añade productos pero no completa la compra. MC
+                        detecta el evento vía API Event desde la plataforma ecommerce.</li>
                     <li><strong>Flujo típico:</strong>
                         <ul>
                             <li>Trigger: API Event con los datos del carrito (productos, precios, imágenes)</li>
@@ -127,30 +162,43 @@
                             <li>Sí (en cualquier punto) → Exit automático vía Journey Goal</li>
                         </ul>
                     </li>
-                    <li><strong>Datos necesarios:</strong> DE de carrito con ProductName, ProductImage, ProductURL, Price y ContactKey, consultables con AMPscript en el email.</li>
-                    <li><strong>Otros behavioral triggers:</strong> Browse abandonment (visitó una página de producto sin añadir al carrito), restablecimiento de contraseña expirado, renovación próxima.</li>
+                    <li><strong>Datos necesarios:</strong> DE de carrito con ProductName, ProductImage, ProductURL,
+                        Price y ContactKey, consultables con AMPscript en el email.</li>
+                    <li><strong>Otros behavioral triggers:</strong> Browse abandonment (visitó una página de producto
+                        sin añadir al carrito), restablecimiento de contraseña expirado, renovación próxima.</li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Trayectorias por Etapa del Ciclo de Vida</h3>
                 <ul>
-                    <li><strong>Nurturing de Leads:</strong> Serie de emails educativos para leads que aún no están listos para comprar. Los mueve del awareness a la consideración con contenido de valor.</li>
-                    <li><strong>Onboarding de Cliente:</strong> Guía al nuevo cliente para que adopte el producto correctamente en los primeros 30-90 días. Reduce el churn temprano significativamente.</li>
-                    <li><strong>Cliente en Riesgo (Churn Prevention):</strong> Detecta señales de desenganche (sin compras en X días, sin aperturas de email) y activa intervención proactiva antes de la pérdida.</li>
-                    <li><strong>Re-engagement:</strong> Intenta recuperar suscriptores inactivos con propuesta de valor renovada. Si no reaccionan tras N intentos, se limpian de la lista activa.</li>
-                    <li><strong>Post-Purchase:</strong> Confirmación de pedido, instrucciones de uso, solicitud de reseña y propuesta de cross-sell en el momento de mayor satisfacción.</li>
-                    <li><strong>Renovación / Retención:</strong> Para suscripciones, inicia la secuencia 30/15/7 días antes del vencimiento con opciones de renovación y beneficios de fidelidad.</li>
+                    <li><strong>Nurturing de Leads:</strong> Serie de emails educativos para leads que aún no están
+                        listos para comprar. Los mueve del awareness a la consideración con contenido de valor.</li>
+                    <li><strong>Onboarding de Cliente:</strong> Guía al nuevo cliente para que adopte el producto
+                        correctamente en los primeros 30-90 días. Reduce el churn temprano significativamente.</li>
+                    <li><strong>Cliente en Riesgo (Churn Prevention):</strong> Detecta señales de desenganche (sin
+                        compras en X días, sin aperturas de email) y activa intervención proactiva antes de la pérdida.
+                    </li>
+                    <li><strong>Re-engagement:</strong> Intenta recuperar suscriptores inactivos con propuesta de valor
+                        renovada. Si no reaccionan tras N intentos, se limpian de la lista activa.</li>
+                    <li><strong>Post-Purchase:</strong> Confirmación de pedido, instrucciones de uso, solicitud de
+                        reseña y propuesta de cross-sell en el momento de mayor satisfacción.</li>
+                    <li><strong>Renovación / Retención:</strong> Para suscripciones, inicia la secuencia 30/15/7 días
+                        antes del vencimiento con opciones de renovación y beneficios de fidelidad.</li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Journeys con Omnicanal: Coordinación de Canales</h3>
                 <ul>
-                    <li><strong>Principio:</strong> Un mismo journey puede orquestar email, SMS y WhatsApp según las preferencias y comportamientos del contacto.</li>
-                    <li><strong>Ejemplo:</strong> Email de confirmación de cita → si no abre en 24h → SMS recordatorio → si no confirma → WhatsApp con botón de confirmación.</li>
-                    <li><strong>Canal preferido:</strong> Usar un Decision Split para dirigir al contacto al canal que ha mostrado mayor engagement en el pasado.</li>
-                    <li><strong>Fatiga de canales:</strong> Configurar Journey Goal o Wait times para evitar saturar al contacto con mensajes repetidos en múltiples canales en pocos días.</li>
+                    <li><strong>Principio:</strong> Un mismo journey puede orquestar email, SMS y WhatsApp según las
+                        preferencias y comportamientos del contacto.</li>
+                    <li><strong>Ejemplo:</strong> Email de confirmación de cita → si no abre en 24h → SMS recordatorio →
+                        si no confirma → WhatsApp con botón de confirmación.</li>
+                    <li><strong>Canal preferido:</strong> Usar un Decision Split para dirigir al contacto al canal que
+                        ha mostrado mayor engagement en el pasado.</li>
+                    <li><strong>Fatiga de canales:</strong> Configurar Journey Goal o Wait times para evitar saturar al
+                        contacto con mensajes repetidos en múltiples canales en pocos días.</li>
                 </ul>
             </div>
         </div>
@@ -158,55 +206,80 @@
         <!-- Sección 3: Automation Studio -->
         <div class="content-section">
             <h2 class="section-title"><span>⚙️</span> Automation Studio: Procesamiento en Lote</h2>
-            <p style="margin-bottom: 20px;">Automation Studio complementa a Journey Builder: mientras JB gestiona experiencias 1:1 en tiempo real, Automation Studio maneja procesos masivos de datos, importaciones y envíos programados.</p>
+            <p style="margin-bottom: 20px;">Automation Studio complementa a Journey Builder: mientras JB gestiona
+                experiencias 1:1 en tiempo real, Automation Studio maneja procesos masivos de datos, importaciones y
+                envíos programados.</p>
 
             <div class="topic-card">
                 <h3>¿Cuándo usar Automation Studio vs. Journey Builder?</h3>
                 <ul>
-                    <li><strong>Automation Studio:</strong> Procesos de datos recurrentes, importaciones de archivos, transformaciones SQL y envíos de email en lote sin necesidad de lógica 1:1.</li>
-                    <li><strong>Journey Builder:</strong> Comunicaciones personalizadas 1:1, trayectorias basadas en eventos de comportamiento en tiempo real o entradas individuales.</li>
-                    <li><strong>Uso combinado (patrón habitual):</strong> Automation Studio prepara y segmenta los datos nocturnamente → Journey Builder los consume al día siguiente para la comunicación personalizada.</li>
+                    <li><strong>Automation Studio:</strong> Procesos de datos recurrentes, importaciones de archivos,
+                        transformaciones SQL y envíos de email en lote sin necesidad de lógica 1:1.</li>
+                    <li><strong>Journey Builder:</strong> Comunicaciones personalizadas 1:1, trayectorias basadas en
+                        eventos de comportamiento en tiempo real o entradas individuales.</li>
+                    <li><strong>Uso combinado (patrón habitual):</strong> Automation Studio prepara y segmenta los datos
+                        nocturnamente → Journey Builder los consume al día siguiente para la comunicación personalizada.
+                    </li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Actividades de Automation Studio</h3>
                 <ul>
-                    <li><strong>SQL Query Activity:</strong> Escribe SQL para extraer, transformar y cargar datos entre Data Extensions. Potentísimo para segmentaciones complejas con múltiples tablas.</li>
-                    <li><strong>Import File Activity:</strong> Importa archivos desde el FTP/SFTP de MC hacia una Data Extension. Soporta CSV, TXT y otros formatos delimitados.</li>
-                    <li><strong>File Transfer Activity:</strong> Mueve o desencripta archivos dentro del sistema de archivos de MC (ej. de la carpeta de entrada a la carpeta de archivado).</li>
-                    <li><strong>Filter Activity:</strong> Aplica criterios de filtrado a una DE para generar una DE filtrada sin necesidad de SQL.</li>
-                    <li><strong>Data Extract Activity:</strong> Exporta datos de MC (métricas de envíos, registros de DE) al FTP en formato CSV para consumo externo por sistemas de BI.</li>
-                    <li><strong>Send Email Activity:</strong> Envío programado de un email a una DE o lista, equivalente a un envío desde Email Studio pero dentro de un flujo automático.</li>
-                    <li><strong>Script Activity:</strong> Ejecuta código SSJS para lógica avanzada de procesamiento de datos no posible con actividades estándar.</li>
-                    <li><strong>Wait Activity:</strong> Pausa la automatización por un período definido antes de continuar con la siguiente actividad.</li>
+                    <li><strong>SQL Query Activity:</strong> Escribe SQL para extraer, transformar y cargar datos entre
+                        Data Extensions. Potentísimo para segmentaciones complejas con múltiples tablas.</li>
+                    <li><strong>Import File Activity:</strong> Importa archivos desde el FTP/SFTP de MC hacia una Data
+                        Extension. Soporta CSV, TXT y otros formatos delimitados.</li>
+                    <li><strong>File Transfer Activity:</strong> Mueve o desencripta archivos dentro del sistema de
+                        archivos de MC (ej. de la carpeta de entrada a la carpeta de archivado).</li>
+                    <li><strong>Filter Activity:</strong> Aplica criterios de filtrado a una DE para generar una DE
+                        filtrada sin necesidad de SQL.</li>
+                    <li><strong>Data Extract Activity:</strong> Exporta datos de MC (métricas de envíos, registros de
+                        DE) al FTP en formato CSV para consumo externo por sistemas de BI.</li>
+                    <li><strong>Send Email Activity:</strong> Envío programado de un email a una DE o lista, equivalente
+                        a un envío desde Email Studio pero dentro de un flujo automático.</li>
+                    <li><strong>Script Activity:</strong> Ejecuta código SSJS para lógica avanzada de procesamiento de
+                        datos no posible con actividades estándar.</li>
+                    <li><strong>Wait Activity:</strong> Pausa la automatización por un período definido antes de
+                        continuar con la siguiente actividad.</li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Tipos de Programación y Disparadores</h3>
                 <ul>
-                    <li><strong>Scheduled Automation:</strong> Se ejecuta automáticamente según un horario recurrente (cada hora, diariamente a las 2:00 AM, los lunes, el primer día del mes, etc.).</li>
-                    <li><strong>File Drop Automation:</strong> Se activa cuando un archivo específico aterriza en el FTP de MC. Ideal para integraciones con sistemas externos que depositan datos regularmente.</li>
-                    <li><strong>Run Once:</strong> Ejecución manual única. Útil para cargas iniciales de datos, correcciones puntuales o pruebas de validación.</li>
+                    <li><strong>Scheduled Automation:</strong> Se ejecuta automáticamente según un horario recurrente
+                        (cada hora, diariamente a las 2:00 AM, los lunes, el primer día del mes, etc.).</li>
+                    <li><strong>File Drop Automation:</strong> Se activa cuando un archivo específico aterriza en el FTP
+                        de MC. Ideal para integraciones con sistemas externos que depositan datos regularmente.</li>
+                    <li><strong>Run Once:</strong> Ejecución manual única. Útil para cargas iniciales de datos,
+                        correcciones puntuales o pruebas de validación.</li>
                 </ul>
             </div>
 
             <div class="topic-card">
                 <h3>Casos de Uso Reales de Automation Studio</h3>
                 <ul>
-                    <li><strong>Segmentación nocturna:</strong> Query SQL a las 2:00 AM que extrae clientes activos de los últimos 30 días y los deposita en la DE de envíos del newsletter del día siguiente.</li>
-                    <li><strong>Importación diaria de leads:</strong> Sistema CRM externo deposita un CSV de leads en el FTP → File Drop activa la importación automática a una DE → Journey de nurturing arranca.</li>
-                    <li><strong>Limpieza semanal de datos:</strong> Query que elimina registros duplicados, contactos con bounces permanentes o datos con más de X meses de antigüedad sin actividad.</li>
-                    <li><strong>Export de métricas para BI:</strong> Data Extract nocturna que vuelca las métricas de campañas al FTP para que el sistema de Business Intelligence las consuma cada mañana.</li>
-                    <li><strong>Refresh de DE de audiencia:</strong> Query que recalcula diariamente qué contactos pertenecen a cada segmento (ej. "clientes VIP", "en riesgo") para usar en envíos o journeys.</li>
+                    <li><strong>Segmentación nocturna:</strong> Query SQL a las 2:00 AM que extrae clientes activos de
+                        los últimos 30 días y los deposita en la DE de envíos del newsletter del día siguiente.</li>
+                    <li><strong>Importación diaria de leads:</strong> Sistema CRM externo deposita un CSV de leads en el
+                        FTP → File Drop activa la importación automática a una DE → Journey de nurturing arranca.</li>
+                    <li><strong>Limpieza semanal de datos:</strong> Query que elimina registros duplicados, contactos
+                        con bounces permanentes o datos con más de X meses de antigüedad sin actividad.</li>
+                    <li><strong>Export de métricas para BI:</strong> Data Extract nocturna que vuelca las métricas de
+                        campañas al FTP para que el sistema de Business Intelligence las consuma cada mañana.</li>
+                    <li><strong>Refresh de DE de audiencia:</strong> Query que recalcula diariamente qué contactos
+                        pertenecen a cada segmento (ej. "clientes VIP", "en riesgo") para usar en envíos o journeys.
+                    </li>
                 </ul>
             </div>
         </div>
 
         <footer>
-            <p>Konozca &copy; 2026 | Material diseñado para formación profesional en Salesforce Marketing Cloud.<br>
-            Basado en el Trail: <em>Implement Marketing Cloud Engagement — Automatizar Trayectorias de Clientes</em></p>
+            <p>Konozca & Joan Mata &copy; 2026 | Material diseñado para formación profesional en Salesforce Marketing
+                Cloud.<br>
+                Basado en el Trail: <em>Implement Marketing Cloud Engagement — Automatizar Trayectorias de Clientes</em>
+            </p>
         </footer>
 
     </div>
